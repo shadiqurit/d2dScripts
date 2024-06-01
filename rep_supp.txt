@@ -1,0 +1,34 @@
+1185964227
+sadiq123#
+
+
+ipihr/i@ipihr
+
+006247
+
+SELECT empcode, E_NAME,web_password
+  FROM emp
+ WHERE empcode = 'IPI-006379';
+
+dbmis
+SELECT EMPLOYEE_ID, EMPLOYEE_NAME, EMPLOYEE_PWD
+  FROM employees
+ WHERE EMPLOYEE_ID = 'IPI-001015';
+
+attendence
+
+ledger_sub_det.rdf
+
+103592
+106328
+
+7478
+
+DPUSER.LEAVE_APPROVAL_V_02
+
+(NVL (a.accured, 0) - NVL (a.taken, 0))
+       - NVL (DECODE (a.taken, 0, a.applied), 0)    available
+---Changed logic for taken and applied balance---
+
+
+http://10.30.20.5:9002/reports/rwservlet?userid=ipihr/i@ipihr&desformat=PDF&destype=cache&report=e:\global\Stepshr\hr\report\att_daily_status.RDF&p_ccode=IPI&p_status=&p_unitid=&p_dp_code=FAC&P_D_CODE=Production&P_FDATE=05-APR-24&p_section_name=

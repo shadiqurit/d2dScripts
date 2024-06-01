@@ -1,0 +1,1 @@
+b.YEARMN = a.YEARMN   and b.REFNO =  a.REFNO and b.EMPCODE = a.EMPCODE and b.PAYTYPE = a.PAYTYPE

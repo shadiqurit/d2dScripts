@@ -1,0 +1,82 @@
+IPI-009008
+
+IPI-009005
+
+IPI-008112	
+IPI-008993
+
+lov
+select empcode r, empcode d, empcode  "employee_id", e_name as name ,Desig_name designation from t_emp_V
+where empcode not like '%EMP%'
+and empcode not like '%IPIO%'
+and CONFIRM_ST in ('CONTRACT','PROBATION')
+and emp_status='A'
+order by empcode 
+
+
+DECLARE
+    join_v   DATE;
+BEGIN
+    SELECT TO_CHAR (ADD_MONTHS (JOIN_DATE, :P548_CONTRACT_PERIOD))
+      INTO join_v
+      FROM EMP_v
+     WHERE EMPCODE = :P548_EMPCODE;
+    :P548_CONFIRM_DUE_DATE := JOIN_V;
+END;
+
+
+select JCR.ID,
+    JCR.EMPCODE,
+    JCR.EMPCODEOLD,
+    JCR.DESIG_NAME,
+    JCR.DEPARTMENT_NAME,
+    JCR.QUALIFICATION,
+    JCR.LOCATION,
+    JCR.JOIN_DATE,
+    JCR.CONTRACT_PERIOD,
+    JCR.CONFIRM_DUE_DATE,
+    JCR.E_NAME 
+ from JCR
+
+
+IPI-008992
+begin
+select nvl(max (TO_NUMBER(id)),0)+1 into :P548_ID from jcr;
+END;
+
+
+P548_E_NAME,P548_EMPCODEOLD,P548_DESIG_NAME,P548_DEPARTMENT_NAME,P548_QUALIFICATION,P548_LOCATION,P548_JOIN_DATE,P548_CONTRACT_PERIOD
+
+
+
+
+BEGIN
+   SELECT a.e_name,
+          A.EMPNO,
+          a.desig_name,
+          a.department_name,
+          B.EXAMNAME,
+          a.location,
+          a.join_date,
+          a.prob_period
+      INTO :P548_E_NAME,
+          :p548_EMPCODEOLD,
+          :P548_DESIG_NAME,
+          :P548_DEPARTMENT_NAME,
+          :P548_QUALIFICATION,
+          :P548_LOCATION,
+          :P548_JOIN_DATE,
+          :P548_CONTRACT_PERIOD
+     FROM emp_v a,
+          (SELECT EXAMNAME, slno
+             FROM hr_empexamdet@hlink
+            WHERE     empcode = :P548_EMPCODE
+                  AND slno = (SELECT MAX (slno)
+                                FROM hr_empexamdet@hlink
+                               WHERE empcode = :P548_EMPCODE)) B
+    WHERE a.empcode = :P548_EMPCODE;
+EXCEPTION
+   WHEN OTHERS
+   THEN
+      NULL;
+END;
