@@ -1,19 +1,41 @@
 1185964227
 sadiq123#
 
+http://10.30.20.5:9001/forms/frmservlet?form=login
 
+AUTO INCRE
+IPI-007928
+
+Comp742Ipi
+
+comp479
+Comp479Ipi
+device 120
+006508
+
+7770100442381
+
+IPI-000324
+IPI-000909
+IPI-000166
+IPI-002903
+IPI-000114
+IPI-000805	IPI-001409	IPI-001016
+
+IPI-004162
 ipihr/i@ipihr
 
 006247
 
 SELECT empcode, E_NAME,web_password
   FROM emp
- WHERE empcode = 'IPI-006379';
+ WHERE empcode = 'IPI-006072';
+IN ('IPI-002760','IPI-004305','IPI-006410','IPI-004295','IPI-000822','IPI-004160','IPI-006231','IPI-007478')
 
 dbmis
 SELECT EMPLOYEE_ID, EMPLOYEE_NAME, EMPLOYEE_PWD
   FROM employees
- WHERE EMPLOYEE_ID = 'IPI-001015';
+ WHERE EMPLOYEE_ID = 'IPI-006633';
 
 attendence
 
@@ -23,6 +45,20 @@ ledger_sub_det.rdf
 106328
 
 7478
+
+
+$('#P902_RG').on('change', function() {
+    $val = apex.item('P902_RG').getValue();
+    if ($val == 1) {
+        $('label[for=P902_SITE_ENG],#P902_SITE_ENG,#P902_SITE_ENG_lov_btn,label[for=P902_FROM_DATE],#P902_FROM_DATE,#P902_FROM_DATE_lov_btn,label[for=P902_TO_DATE],#P902_TO_DATE,#P902_TO_DATE_lov_btn').hide();
+    } else if ($val == 2) {
+        $('label[for=P902_SITE_ENG],#P902_SITE_ENG,#P902_SITE_ENG_lov_btn,label[for=P902_FROM_DATE],#P902_FROM_DATE,#P902_FROM_DATE_lov_btn,label[for=P902_TO_DATE],#P902_TO_DATE,#P902_TO_DATE_lov_btn').show();
+    } else if ($val == 3) {
+        $('label[for=P902_SITE_ENG],#P902_SITE_ENG,#P902_SITE_ENG_lov_btn,label[for=P902_FROM_DATE],#P902_FROM_DATE,#P902_FROM_DATE_lov_btn,label[for=P902_TO_DATE],#P902_TO_DATE,#P902_TO_DATE_lov_btn').show();
+    } else {
+        null;
+    }
+});
 
 DPUSER.LEAVE_APPROVAL_V_02
 

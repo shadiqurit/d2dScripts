@@ -1,0 +1,15 @@
+IPI-006072
+IPI-005431
+
+
+12/13/14 
+march 
+
+"C:\Program Files (x86)\Mozilla Firefox\firefox.exe" -osint -url "%1"
+
+
+"C:\Program Files (x86)\Mozilla Firefox\firefox.exe" -osint -url "%1"
+
+
+
+C:\Program Files (x86)\Mozilla Firefox
