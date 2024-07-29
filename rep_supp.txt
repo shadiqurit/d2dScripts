@@ -1,5 +1,25 @@
+transfer 
+sdf23423d
+sdf23423d
+
 1185964227
 sadiq123#
+
+--5:37 PM 14-Jul-24--
+Ot Problem in 12 jun
+IPI-002154
+IPI-002150
+IPI-002998
+Wm@1973
+IPI-007036
+1004
+
+01709645125
+
+IMRAN VAI 
+CHEMIST CODE 
+1206153
+1205246
 
 http://10.30.20.5:9001/forms/frmservlet?form=login
 
@@ -29,7 +49,7 @@ ipihr/i@ipihr
 
 SELECT empcode, E_NAME,web_password
   FROM emp
- WHERE empcode = 'IPI-006072';
+ WHERE empcode = 'IPI-000220';
 IN ('IPI-002760','IPI-004305','IPI-006410','IPI-004295','IPI-000822','IPI-004160','IPI-006231','IPI-007478')
 
 dbmis
@@ -68,3 +88,8 @@ DPUSER.LEAVE_APPROVAL_V_02
 
 
 http://10.30.20.5:9002/reports/rwservlet?userid=ipihr/i@ipihr&desformat=PDF&destype=cache&report=e:\global\Stepshr\hr\report\att_daily_status.RDF&p_ccode=IPI&p_status=&p_unitid=&p_dp_code=FAC&P_D_CODE=Production&P_FDATE=05-APR-24&p_section_name=
+
+
+
+
+ALTER USER  DOCUMENTS GRANT CONNECT THROUGH ORDS_PUBLIC_USER;
