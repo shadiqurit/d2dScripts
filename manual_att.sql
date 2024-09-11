@@ -19,7 +19,7 @@ WITH
                                 AND y.c = x.sl))
 SELECT *
   FROM cte
- WHERE rn >= 0 AND empcode IN ('IPI-006619');
+ WHERE rn >= 0 AND empcode IN ('IPI-001360');
 
 
  SELECT APPROVED_START_DATE, EMPCODE, COUNT (*)

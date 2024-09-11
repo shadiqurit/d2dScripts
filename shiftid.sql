@@ -1,0 +1,43 @@
+/* Formatted on 15/Aug/24 10:30:39 AM (QP5 v5.362) */
+SELECT YEARMN,
+       EMPCODE,
+       E_NAME,       
+       DESIG_NAME,       
+       DT1,
+       DT2,
+       DT3,
+       DT4,
+       DT5,
+       DT6,
+       DT7,
+       DT8,
+       DT9,
+       DT10,
+       DT11,
+       DT12,
+       DT13,
+       DT14,
+       DT15,
+       DT16,
+       DT17,
+       DT18,
+       DT19,
+       DT20,
+       DT21,
+       DT22,
+       DT23,
+       DT24,
+       DT25,
+       DT26,
+       DT27,
+       DT28,
+       DT29,
+       DT30,
+       DT31,
+       SHIFT_TYPE,
+       DEPARTMENT_NAME
+  FROM hr_emp_shift
+ WHERE     YEARMN = 202408
+       AND DEPARTMENT_NAME = 'Quality Control'
+       AND DP_CODE = 'FAC'
+       AND BUSINESSUNITID = 'Unit-04'
