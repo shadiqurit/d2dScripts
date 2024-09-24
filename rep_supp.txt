@@ -32,7 +32,7 @@ ipihr/i@ipihr
 
 SELECT empcode, E_NAME,web_password
   FROM emp
-WHERE empcode = 'IPI-002173';
+WHERE empcode = 'IPI-008113';
 
 
 IN ('IPI-002760','IPI-004305','IPI-006410','IPI-004295','IPI-000822','IPI-004160','IPI-006231','IPI-007478')
@@ -56,3 +56,9 @@ DPUSER.LEAVE_APPROVAL_V_02
 http://10.30.20.5:9002/reports/rwservlet?userid=ipihr/i@ipihr&desformat=PDF&destype=cache&report=e:\global\Stepshr\hr\report\att_daily_status.RDF&p_ccode=IPI&p_status=&p_unitid=&p_dp_code=FAC&P_D_CODE=Production&P_FDATE=05-APR-24&p_section_name=
 
 ALTER USER  DOCUMENTS GRANT CONNECT THROUGH ORDS_PUBLIC_USER;
+
+
+att report
+
+
+http://10.30.20.5:9002/reports/rwservlet?userid=ipihr/i@ipihr&desformat=PDF&destype=cache&report=e:\global\Stepshr\hr\report\att_emp.RDF&p_empcode=IPI-009129&p_status=&P_TDATE=31-JUL-24&P_FDATE=01-JUL-24
