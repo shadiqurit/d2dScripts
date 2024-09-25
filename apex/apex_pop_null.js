@@ -18,13 +18,18 @@ fetch(apiURL)
         var myNewRecordId = model.insertNewRecord();
         var myNewRecord = model.getRecord(myNewRecordId);
         // model.setValue(myNewRecord, 'EMPNO', item.empno || 'N/A');
+        //let str = null ? null: " 0";
         model.setValue(myNewRecord, 'ENAME', item.ename || 'N/A');
-        model.setValue(myNewRecord, 'MGR', item.mgr || NULL);
+        model.setValue(myNewRecord, 'MGR', item.mgr);
         model.setValue(myNewRecord, 'HIREDATE', new Date(item.hiredate).toLocaleDateString() || 'N/A');
         model.setValue(myNewRecord, 'JOB', item.job || 'N/A');
-        model.setValue(myNewRecord, 'SAL', item.sal || 'N/A');
-        model.setValue(myNewRecord, 'COMM', item.comm || 'N/A');
-        model.setValue(myNewRecord, 'DEPTNO', item.deptno || 'N/A');
+        model.setValue(myNewRecord, 'SAL', item.sal.toString());
+        model.setValue(myNewRecord, 'COMM',  (item.comm !== null ? item.comm : "").toString());
+        //model.setValue(myNewRecord, 'COMM',item.comm if( item.comm === null || val === "" ));
+        //if( item.comm === null || val === "" )
+       
+
+        model.setValue(myNewRecord, 'DEPTNO', item.deptno.toString());
     });
 
     // Refresh the grid view to show the new data
