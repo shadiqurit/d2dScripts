@@ -1,0 +1,78 @@
+/* Formatted on 05/Oct/24 4:53:51 PM (QP5 v5.227.12220.39754) */
+----Distributor / CUstomer Data----
+SELECT DISTRIB_ID DIST_ID,
+       DISTRIB_NAME DIST_NAME,
+       ADDRESS1 ADDRESS,
+       ADDRESS2 TELE_NO,
+       comp_id,
+	
+       ENTER_DATE JOIN_DATE
+  FROM DISTRIBUTOR_INFORMATION@APPL_ERP_LINK d
+ WHERE NOT EXISTS
+          (SELECT *
+             FROM distributor db
+            WHERE DB.DIST_ID = d.DISTRIB_ID);
+
+
+----- Finish Goods / Products Data----
+
+SELECT product_id,
+       prod_code int_code,
+       TRIM (prod_name) PRODUCT_NAME,
+       sales_price PRICE_GROUP_A,
+       CASE WHEN active_status = 'True' THEN 'A' ELSE 'I' END AS status,
+       comp_id
+  FROM PRODUCT_DETAIL@APPL_ERP_LINK pd
+ WHERE NOT EXISTS
+          (SELECT *
+             FROM product_info pi
+            WHERE pi.product_id = pd.product_id);
+
+-----------Sales Invoice Data ------
+
+CREATE OR REPLACE VIEW V_INVOICE
+AS
+     SELECT a.do_id inv_id,
+            do_no inv_no,
+            do_date inv_date,
+            c.distrib_code dist_code,
+            c.distrib_name dist_name,
+            a.delivery_point,
+            TRIM (address1) address1,
+            address2 contact_no,
+            a.distrib_id dist_id,
+            slno,
+            b.product_id,
+            prod_code,
+            prod_name,
+            unit_id,
+            TRIM (unit_name) unit_name,
+            del_qnty product_qnty,
+            product_price,
+            (NVL (del_qnty, 0)) * NVL (product_price, 0) total_value,
+            f.gate_pass_no,
+            f.gate_pass_date,
+            f.vehicle_id,
+            f.vehicale_no vehicle_no,
+            driver_name,
+            mobile_no,
+            f.del_outtime,
+            h.po_order_no inv_po_no,
+            a.party_po_no,
+            a.remarks
+       FROM delivery_order_master@APPL_ERP_LINK a,
+            delivery_order_detail@APPL_ERP_LINK b,
+            distributor_information@APPL_ERP_LINK c,
+            product_detail@APPL_ERP_LINK d,
+            msr_unit@APPL_ERP_LINK e,
+            delivery_gate_pass@APPL_ERP_LINK f,
+            tblvehicle@APPL_ERP_LINK g,
+            po_order_mst@APPL_ERP_LINK h
+      WHERE     a.do_id = b.do_id
+            AND a.distrib_id = c.distrib_id
+            AND b.product_id = d.product_id
+            AND b.product_uom = e.unit_id(+)
+            AND a.gate_pass_id = f.gate_pass_id(+)
+            AND f.vehicle_id = g.intid(+)
+            AND b.po_order_id = h.po_order_id(+)
+   ORDER BY slno;

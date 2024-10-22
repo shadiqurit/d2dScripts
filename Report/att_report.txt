@@ -1,0 +1,2 @@
+
+http://10.30.20.5:9003/reports/rwservlet?userid=ipihr/i@ipihr&desformat=PDF&destype=cache&report=e:\global\Stepshr\hr\report\att_emp.RDF&p_empcode=IPI-009129&p_status=&P_TDATE=31-OCT-24&P_FDATE=01-OCT-24

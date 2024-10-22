@@ -1,0 +1,15 @@
+---crt and key to generate p12 file command source file---
+openssl pkcs12 -export -in labexpress.crt -inkey labexpress.key -out keystore.p12 -name labexpress
+openssl pkcs12 -export -in picosaas.crt -inkey picosaas.key -out keystore.p12 -name starpicosaas
+
+
+openssl pkcs12 -export -in sadiqpro.crt -inkey sadiqpro.key -out sadiqprokeystore.p12 -name starsadiqpro
+keytool -importkeystore -srckeystore D:\slss\sadiqprokeystore.p12 -srcstoretype PKCS12 -destkeystore D:\slss\starsadiqpro.jks -deststoretype JKS
+
+---Command in Java Bin---
+keytool -importkeystore -srckeystore D:\slss\keystore.p12 -srcstoretype PKCS12 -destkeystore D:\slss\starpicosaas.jks -deststoretype JKS
+
+
+
+starpicosaas
+starsadiqpro

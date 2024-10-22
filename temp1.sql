@@ -1,20 +1,21 @@
-
-
-
-
-'INM-000097',
-'INM-000070',
-'IPI-007886',
-'IPI-002129',
-'IPI-003367',
-'IPI-002041'
-
+'IPI-001818',
+'IPI-003474',
+'IPI-003775',
+'IPI-004591',
+'IPI-006825',
+'IPI-006951',
+'IPI-007790',
+'IPI-007794'
 
 
 
 
 
 
+('amount', rec.amount);
+        APEX_JSON.write ('totalamount', rec.totalamount);
+        APEX_JSON.write ('vatamount', rec.vatamount);
+        APEX_JSON.write ('incvatamt', rec.incvatamt);
 
 
 

@@ -1,0 +1,22 @@
+<input type="text" id="date-input" placeholder="Enter date in DDMMYYYY format">
+<script>
+$(document).ready(function() {
+    $('#date-input').on('input', function() {
+        var input = $(this).val();
+
+        // Check if the input length is 8 (for DDMMYYYY format)
+        if (input.length === 8 && !isNaN(input)) {
+            var day = input.substring(0, 2);
+            var month = input.substring(2, 4);
+            var year = input.substring(4, 8);
+            
+            // Convert the month number to month name
+            var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            var formattedDate = day + "-" + monthNames[parseInt(month) - 1] + "-" + year;
+
+            // Update the input field with the formatted date
+            $(this).val(formattedDate);
+        }
+    });
+});
+</script>
