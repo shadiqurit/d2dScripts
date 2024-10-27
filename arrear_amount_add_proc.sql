@@ -46,7 +46,7 @@ BEGIN
     --                   b.REMARKS = x.REMARKS
     --             WHERE     b.EMPCODE = x.empcode
     --                   AND b.YEARMN = x.YEARMN
-    --                   AND b.PARTICULAR = x.PARTICULAR
+    --                   --AND b.PARTICULAR = x.PARTICULAR
     --                   AND b.SLNO = x.SLNO;
 
     END LOOP;

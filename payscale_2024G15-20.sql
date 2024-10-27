@@ -1,4 +1,4 @@
-/* Formatted on 10/27/2024 9:18:46 AM (QP5 v5.362) */
+/* Formatted on 10/27/2024 6:09:06 PM (QP5 v5.362) */
   SELECT EMPCODE,
          E_NAME,
          EMP_STATUS,
@@ -22,24 +22,7 @@ AS
 CREATE TABLE emp_241024
 AS
     SELECT * FROM emp;
-    
-    
---    HR_HEAD
 
-
-CREATE TABLE HR_EMPSALSTRUCTURE_271024
-AS
-    SELECT * FROM HR_EMPSALSTRUCTURE;
-
-CREATE TABLE HR_SALARYGRADE_271024
-AS
-    SELECT * FROM HR_SALARYGRADE;
-
-CREATE TABLE emp_271024
-AS
-    SELECT * FROM emp;
-    
-    /* Formatted on 10/27/2024 9:45:14 AM (QP5 v5.362) */
 DECLARE
     CURSOR dt IS
         SELECT e1.EMPCODE,
@@ -69,7 +52,7 @@ BEGIN
 END;
 
 
-/* Formatted on 10/27/2024 9:45:26 AM (QP5 v5.362) */
+
 DECLARE
     CURSOR dt IS
         SELECT e1.EMPCODE,
@@ -174,135 +157,198 @@ END;
 
 
 
-
 ------DA------
-/* Formatted on 10/27/2024 10:17:28 AM (QP5 v5.362) */
+
 MERGE INTO HR_EMPSALSTRUCTURE b
-USING (
-    SELECT EMPCODE,
-           SALARYGRADE      AS DESIGCODE,
-           15               AS SLNO,
-           5000             AS SALPER,
-           5000             AS AMOUNTCUR,
-           2024             AS YEAROFSTRUC,
-           SYSDATE          AS EDATE,
-           1                AS PRTCLR_TYPE,
-           '015'            AS HEADCODE,
-           DEPARTMENT_NAME,
-           DESIG_NAME,
-           SALARYSCAL,
-           SALARY_STATUS
-      FROM emp
-     WHERE SALARYGRADE BETWEEN 'GRADE-02' AND 'GRADE-05'
-       AND EMP_STATUS = 'A'
-) x
-ON (b.EMPCODE = x.EMPCODE AND b.SLNO = 15)
-WHEN MATCHED THEN
+     USING (SELECT EMPCODE,
+                   SALARYGRADE     AS DESIGCODE,
+                   15              AS SLNO,
+                   5000            AS SALPER,
+                   5000            AS AMOUNTCUR,
+                   2024            AS YEAROFSTRUC,
+                   SYSDATE         AS EDATE,
+                   1               AS PRTCLR_TYPE,
+                   '015'           AS HEADCODE,
+                   DEPARTMENT_NAME,
+                   DESIG_NAME,
+                   SALARYSCAL,
+                   SALARY_STATUS
+              FROM emp
+             WHERE     SALARYGRADE BETWEEN 'GRADE-02' AND 'GRADE-05'
+                   AND EMP_STATUS = 'A') x
+        ON (b.EMPCODE = x.EMPCODE AND b.SLNO = 15)
+WHEN MATCHED
+THEN
     UPDATE SET b.DESIGCODE = x.DESIGCODE,
                b.AMOUNTPRV = b.AMOUNTCUR,
                b.SALPER = x.SALPER,
                b.AMOUNTCUR = x.AMOUNTCUR,
                b.YEAROFSTRUC = x.YEAROFSTRUC
-WHEN NOT MATCHED THEN
-    INSERT (EMPCODE, DESIGCODE, SLNO, SALPER, AMOUNTCUR, YEAROFSTRUC, EDATE, PRTCLR_TYPE, HEADCODE   )
-    VALUES (x.EMPCODE, x.DESIGCODE, x.SLNO, x.SALPER, x.AMOUNTCUR, x.YEAROFSTRUC, x.EDATE, x.PRTCLR_TYPE, x.HEADCODE  );
+WHEN NOT MATCHED
+THEN
+    INSERT     (EMPCODE,
+                DESIGCODE,
+                SLNO,
+                SALPER,
+                AMOUNTCUR,
+                YEAROFSTRUC,
+                EDATE,
+                PRTCLR_TYPE,
+                HEADCODE)
+        VALUES (x.EMPCODE,
+                x.DESIGCODE,
+                x.SLNO,
+                x.SALPER,
+                x.AMOUNTCUR,
+                x.YEAROFSTRUC,
+                x.EDATE,
+                x.PRTCLR_TYPE,
+                x.HEADCODE);
 
 COMMIT;
 
 
 MERGE INTO HR_EMPSALSTRUCTURE b
-USING (
-    SELECT EMPCODE,
-           SALARYGRADE      AS DESIGCODE,
-           15               AS SLNO,
-           4000             AS SALPER,
-           4000             AS AMOUNTCUR,
-           2024             AS YEAROFSTRUC,
-           SYSDATE          AS EDATE,
-           1                AS PRTCLR_TYPE,
-           '015'            AS HEADCODE,
-           DEPARTMENT_NAME,
-           DESIG_NAME,
-           SALARYSCAL,
-           SALARY_STATUS
-      FROM emp
-     WHERE SALARYGRADE BETWEEN 'GRADE-06' AND 'GRADE-08'
-       AND EMP_STATUS = 'A'
-) x
-ON (b.EMPCODE = x.EMPCODE AND b.SLNO = 15)
-WHEN MATCHED THEN
+     USING (SELECT EMPCODE,
+                   SALARYGRADE     AS DESIGCODE,
+                   15              AS SLNO,
+                   4000            AS SALPER,
+                   4000            AS AMOUNTCUR,
+                   2024            AS YEAROFSTRUC,
+                   SYSDATE         AS EDATE,
+                   1               AS PRTCLR_TYPE,
+                   '015'           AS HEADCODE,
+                   DEPARTMENT_NAME,
+                   DESIG_NAME,
+                   SALARYSCAL,
+                   SALARY_STATUS
+              FROM emp
+             WHERE     SALARYGRADE BETWEEN 'GRADE-06' AND 'GRADE-08'
+                   AND EMP_STATUS = 'A') x
+        ON (b.EMPCODE = x.EMPCODE AND b.SLNO = 15)
+WHEN MATCHED
+THEN
     UPDATE SET b.DESIGCODE = x.DESIGCODE,
                b.AMOUNTPRV = b.AMOUNTCUR,
                b.SALPER = x.SALPER,
                b.AMOUNTCUR = x.AMOUNTCUR,
                b.YEAROFSTRUC = x.YEAROFSTRUC
-WHEN NOT MATCHED THEN
-    INSERT (EMPCODE, DESIGCODE, SLNO, SALPER, AMOUNTCUR, YEAROFSTRUC, EDATE, PRTCLR_TYPE, HEADCODE   )
-    VALUES (x.EMPCODE, x.DESIGCODE, x.SLNO, x.SALPER, x.AMOUNTCUR, x.YEAROFSTRUC, x.EDATE, x.PRTCLR_TYPE, x.HEADCODE  );
+WHEN NOT MATCHED
+THEN
+    INSERT     (EMPCODE,
+                DESIGCODE,
+                SLNO,
+                SALPER,
+                AMOUNTCUR,
+                YEAROFSTRUC,
+                EDATE,
+                PRTCLR_TYPE,
+                HEADCODE)
+        VALUES (x.EMPCODE,
+                x.DESIGCODE,
+                x.SLNO,
+                x.SALPER,
+                x.AMOUNTCUR,
+                x.YEAROFSTRUC,
+                x.EDATE,
+                x.PRTCLR_TYPE,
+                x.HEADCODE);
 
 COMMIT;
 
 MERGE INTO HR_EMPSALSTRUCTURE b
-USING (
-    SELECT EMPCODE,
-           SALARYGRADE      AS DESIGCODE,
-           15               AS SLNO,
-           3000             AS SALPER,
-           3000             AS AMOUNTCUR,
-           2024             AS YEAROFSTRUC,
-           SYSDATE          AS EDATE,
-           1                AS PRTCLR_TYPE,
-           '015'            AS HEADCODE,
-           DEPARTMENT_NAME,
-           DESIG_NAME,
-           SALARYSCAL,
-           SALARY_STATUS
-      FROM emp
-     WHERE SALARYGRADE BETWEEN 'GRADE-09' AND 'GRADE-11'
-       AND EMP_STATUS = 'A'
-) x
-ON (b.EMPCODE = x.EMPCODE AND b.SLNO = 15)
-WHEN MATCHED THEN
+     USING (SELECT EMPCODE,
+                   SALARYGRADE     AS DESIGCODE,
+                   15              AS SLNO,
+                   3000            AS SALPER,
+                   3000            AS AMOUNTCUR,
+                   2024            AS YEAROFSTRUC,
+                   SYSDATE         AS EDATE,
+                   1               AS PRTCLR_TYPE,
+                   '015'           AS HEADCODE,
+                   DEPARTMENT_NAME,
+                   DESIG_NAME,
+                   SALARYSCAL,
+                   SALARY_STATUS
+              FROM emp
+             WHERE     SALARYGRADE BETWEEN 'GRADE-09' AND 'GRADE-11'
+                   AND EMP_STATUS = 'A') x
+        ON (b.EMPCODE = x.EMPCODE AND b.SLNO = 15)
+WHEN MATCHED
+THEN
     UPDATE SET b.DESIGCODE = x.DESIGCODE,
                b.AMOUNTPRV = b.AMOUNTCUR,
                b.SALPER = x.SALPER,
                b.AMOUNTCUR = x.AMOUNTCUR,
                b.YEAROFSTRUC = x.YEAROFSTRUC
-WHEN NOT MATCHED THEN
-    INSERT (EMPCODE, DESIGCODE, SLNO, SALPER, AMOUNTCUR, YEAROFSTRUC, EDATE, PRTCLR_TYPE, HEADCODE   )
-    VALUES (x.EMPCODE, x.DESIGCODE, x.SLNO, x.SALPER, x.AMOUNTCUR, x.YEAROFSTRUC, x.EDATE, x.PRTCLR_TYPE, x.HEADCODE  );
+WHEN NOT MATCHED
+THEN
+    INSERT     (EMPCODE,
+                DESIGCODE,
+                SLNO,
+                SALPER,
+                AMOUNTCUR,
+                YEAROFSTRUC,
+                EDATE,
+                PRTCLR_TYPE,
+                HEADCODE)
+        VALUES (x.EMPCODE,
+                x.DESIGCODE,
+                x.SLNO,
+                x.SALPER,
+                x.AMOUNTCUR,
+                x.YEAROFSTRUC,
+                x.EDATE,
+                x.PRTCLR_TYPE,
+                x.HEADCODE);
 
 COMMIT;
 
 
 MERGE INTO HR_EMPSALSTRUCTURE b
-USING (
-    SELECT EMPCODE,
-           SALARYGRADE      AS DESIGCODE,
-           15               AS SLNO,
-           2500             AS SALPER,
-           2500             AS AMOUNTCUR,
-           2024             AS YEAROFSTRUC,
-           SYSDATE          AS EDATE,
-           1                AS PRTCLR_TYPE,
-           '015'            AS HEADCODE,
-           DEPARTMENT_NAME,
-           DESIG_NAME,
-           SALARYSCAL,
-           SALARY_STATUS
-      FROM emp
-     WHERE SALARYGRADE BETWEEN 'GRADE-12' AND 'GRADE-14'
-       AND EMP_STATUS = 'A'
-) x
-ON (b.EMPCODE = x.EMPCODE AND b.SLNO = 15)
-WHEN MATCHED THEN
+     USING (SELECT EMPCODE,
+                   SALARYGRADE     AS DESIGCODE,
+                   15              AS SLNO,
+                   2500            AS SALPER,
+                   2500            AS AMOUNTCUR,
+                   2024            AS YEAROFSTRUC,
+                   SYSDATE         AS EDATE,
+                   1               AS PRTCLR_TYPE,
+                   '015'           AS HEADCODE,
+                   DEPARTMENT_NAME,
+                   DESIG_NAME,
+                   SALARYSCAL,
+                   SALARY_STATUS
+              FROM emp
+             WHERE     SALARYGRADE BETWEEN 'GRADE-12' AND 'GRADE-14'
+                   AND EMP_STATUS = 'A') x
+        ON (b.EMPCODE = x.EMPCODE AND b.SLNO = 15)
+WHEN MATCHED
+THEN
     UPDATE SET b.DESIGCODE = x.DESIGCODE,
                b.AMOUNTPRV = b.AMOUNTCUR,
                b.SALPER = x.SALPER,
                b.AMOUNTCUR = x.AMOUNTCUR,
                b.YEAROFSTRUC = x.YEAROFSTRUC
-WHEN NOT MATCHED THEN
-    INSERT (EMPCODE, DESIGCODE, SLNO, SALPER, AMOUNTCUR, YEAROFSTRUC, EDATE, PRTCLR_TYPE, HEADCODE   )
-    VALUES (x.EMPCODE, x.DESIGCODE, x.SLNO, x.SALPER, x.AMOUNTCUR, x.YEAROFSTRUC, x.EDATE, x.PRTCLR_TYPE, x.HEADCODE  );
+WHEN NOT MATCHED
+THEN
+    INSERT     (EMPCODE,
+                DESIGCODE,
+                SLNO,
+                SALPER,
+                AMOUNTCUR,
+                YEAROFSTRUC,
+                EDATE,
+                PRTCLR_TYPE,
+                HEADCODE)
+        VALUES (x.EMPCODE,
+                x.DESIGCODE,
+                x.SLNO,
+                x.SALPER,
+                x.AMOUNTCUR,
+                x.YEAROFSTRUC,
+                x.EDATE,
+                x.PRTCLR_TYPE,
+                x.HEADCODE);
 
 COMMIT;
