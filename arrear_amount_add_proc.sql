@@ -37,6 +37,8 @@ BEGIN
                      x.HEADCODE,
                      x.REFNO,
                      x.REMARKS);
+
+                     
     --            UPDATE HR_EMP_MONTH_HEAD b
     --               SET b.YEARMN = x.YEARMN,
     --                   b.AMOUNTCUR = x.ARREAR_AMT,
