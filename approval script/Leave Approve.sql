@@ -1,4 +1,4 @@
-/* Formatted on 9/11/2024 10:39:02 AM (QP5 v5.362) */
+/* Formatted on 11/7/2024 4:53:02 PM (QP5 v5.362) */
 ---Department Wise Leave Approve---
 
 UPDATE leave_approval

@@ -1,11 +1,25 @@
-/* Formatted on 9/10/2024 10:45:47 AM (QP5 v5.362) */
----- Scheduler
+/* Formatted on 11/7/2024 10:02:11 AM (QP5 v5.362) */
+--- Scheduler ---
 
 BEGIN
-  --  p_att_mysql_to_orcl;
-   --p_att104_to_att_time;
+    p_att_mysql_to_orcl;
+END;
+/
+
+BEGIN
+    p_att104_to_att_time;
+END;
+/
+
+BEGIN
     ATTANCE_SYNC;
 END;
+/
+
+BEGIN
+    att_daily_cloud;
+END;
+/
 
 BEGIN
     DBMS_SCHEDULER.create_job (
@@ -30,3 +44,5 @@ END;
 /
 
 SELECT SYSDATE FROM DUAL;
+
+SELECT TO_CHAR (SYSDATE, 'DD-MON-RRRR hh:mm:ii PM') dt_time FROM DUAL;

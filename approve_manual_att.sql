@@ -1,3 +1,4 @@
+/* Formatted on 11/7/2024 4:54:18 PM (QP5 v5.362) */
 UPDATE dpuser.manual_att_approval x
    SET STATUS_L5 = 'Y',
        FINAL_STATUS_DETAIL_2 = 'Finally Approved By  HR Department',
