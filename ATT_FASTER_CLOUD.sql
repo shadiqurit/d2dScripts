@@ -938,27 +938,31 @@ ON (a.checktime = b.checktime AND a.userid = b.userid)
    */
 
    --------- holiday from roaster
-   UPDATE att_emp_t01
-      SET status = DECODE (is_holiday, 1, 'W'),
-          remark =
-             DECODE (is_holiday,
-                     1, DECODE (is_shift, 1, 'Shifting Holiday', 'Holiday'))
-    WHERE     is_holiday = 1
-          AND attdate BETWEEN p_fdate AND p_tdate
-          AND empcode = NVL (p_empcode, empcode);
 
-   COMMIT;
-
-   UPDATE att_emp_t01
-      SET status = DECODE (is_govt_holiday, 1, 'H'),
+    UPDATE att_emp_t01
+      SET status = DECODE (is_shift, 1, 'H', 'G'),
           remark =
              DECODE (is_govt_holiday,
-                     1, DECODE (is_shift, 1, 'Shifting Holiday', 'Holiday'))
+                     1, DECODE (is_shift, 1, 'Shifting Holiday', 'Govt Holiday'))
     WHERE     is_govt_holiday = 1
           AND attdate BETWEEN p_fdate AND p_tdate
           AND empcode = NVL (p_empcode, empcode);
 
    COMMIT;
+
+
+UPDATE att_emp_t01
+      SET status = DECODE (is_holiday, 1, 'W'),
+          remark =
+             DECODE (is_holiday,
+                     1, DECODE (is_shift, 1, 'Holiday', 'Holiday'))
+    WHERE    is_holiday = 1 
+          AND attdate BETWEEN p_fdate AND p_tdate
+          AND empcode = NVL (p_empcode, empcode);
+
+   COMMIT;
+
+
 
    UPDATE att_emp_t01
       SET remark = 'Shifting Duty'
