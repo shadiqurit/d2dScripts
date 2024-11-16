@@ -4,120 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyperlink Buttons with Notice</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: #fff;
-        }
-        /* Notice Marquee */
-        .notice-marquee {
-            background-color: #ffeb3b;
-            color: #333;
-            width: 100%;
-            padding: 10px 0;
-            text-align: center;
-            font-weight: bold;
-            position: fixed;
-            top: 0;
-            z-index: 1;
-        }
-        .marquee {
-            display: inline-block;
-            white-space: nowrap;
-            overflow: hidden;
-            animation: marquee 20s linear infinite; /* Slower speed */
-        }
-        @keyframes marquee {
-            from { transform: translateX(100%); }
-            to { transform: translateX(-100%); }
-        }
-        /* Main Content Area */
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 80px; /* Adjust to provide space for the fixed marquee */
-            width: 100%;
-        }
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-        }
-        .button {
-            background-color: #03a9f4;
-            color: white;
-            padding: 15px 30px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-            width: 190px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-        }
-        .button:hover {
-            background-color: #0288d1;
-        }
-        .footer {
-            font-size: 12px;
-            color: #fff;
-            margin-top: 20px;
-            text-align: center;
-        }
-        .label {
-            font-size: 18px;
-            margin-bottom: 5px;
-            text-align: center;
-            text-decoration: underline;
-        }
+        /* Root container with explicit justify-content */
+      
     </style>
 </head>
 <body>
+   
 
-    <!-- Notice Marquee -->
-    <div class="notice-marquee">
-        <div class="marquee">
-            <span><strong></strong> IPI Software changes, default pass: 123 &nbsp; | &nbsp; <strong></strong> Maintenance scheduled for 10 PM<strong></span>
+    <div class="root-container">
+         <!-- Notice Marquee -->
+    
+       <div class="notice-marquee">
+            <div class="marquee">
+                <span><strong></strong> IPI Software changes, default pass: 123 &nbsp; | &nbsp; <strong></strong> Maintenance scheduled for 10 PM<strong></span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="column column-1">
+                <img src="images/Picture1.jpg" alt=""></div>
+            <div class="column column-2">
+                
+        </div>
+            <div class="column column-3 "> <div class="button-container centered">
+                <div class="label">Operations of IBN SINA</div>
+                <a href="http://10.30.25.5:7001/ords/f?p=123" target="_blank" class="button">Cloud ERP – SCM</a>
+                <a href="http://10.30.20.5:7001/ords/f?p=106" target="_blank" class="button">Cloud ERP – Leave MIS</a>
+                <a href="https://w05.yeapps.com/ipi_combined/default/home" target="_blank" class="button">IPI-MERGER</a>
+                <a href="http://w05.yeapps.com/ipiMarketing" target="_blank" class="button">Marketing Pharma</a>
+                <a href="http://w05.yeapps.com/ipinmd" target="_blank" class="button">Marketing NMD</a>
+                <a href="http://192.168.5.118:9001/ords/f?p=111" target="_blank" class="button">IPI Reports</a>
+            </div></div>
         </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="content">
-        <div class="button-container">
-            <div class="label">Operations of IBN SINA</div>
-            <a href="http://10.30.25.5:7001/ords/f?p=123" target="_blank" class="button">Cloud ERP – SCM</a>
-            <a href="http://10.30.20.5:7001/ords/f?p=106:101" target="_blank" class="button">Cloud ERP – Leave MIS</a>
-            <a href="https://w05.yeapps.com/ipi_combined/default/home" target="_blank" class="button">IPI-MERGER</a>
-            <a href="http://w05.yeapps.com/ipiMarketing" target="_blank" class="button">Marketing Pharma</a>
-            <a href="http://w05.yeapps.com/ipinmd" target="_blank" class="button">Marketing NMD</a>
-            <a href="http://192.168.5.118:9001/ords/f?p=111:LOGIN_DESKTOP:4029370572046:::::" target="_blank" class="button">IPI Reports</a>
-        </div>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: Green;
-   color: white;
-   text-align: center;
-}
-</style>
-</head>
-<body>
-<div class="footer">
-  <p>Footer</p>
-</div>
+    <div class="footer">
+        <img src="logo-01.png" alt="IBNSINA">
+        <p class="ftext"> <span style="color: #2E3092;"> Designed by  </span>IT Department </p>
+    </div>
 </body>
-</html> 
-
+</html>
