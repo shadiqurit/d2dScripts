@@ -1,4 +1,4 @@
-/* Formatted on 11/7/2024 10:02:11 AM (QP5 v5.362) */
+/* Formatted on 11/13/2024 2:35:42 PM (QP5 v5.362) */
 --- Scheduler ---
 
 BEGIN
@@ -46,5 +46,3 @@ END;
 SELECT SYSDATE FROM DUAL;
 
 SELECT TO_CHAR (SYSDATE, 'DD-MON-RRRR hh:mm:ii PM') dt_time FROM DUAL;
-
-
