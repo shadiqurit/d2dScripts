@@ -20,4 +20,4 @@ SELECT empcode          "ID No",
        BRANCH_NAME      "Branch Name",
        BANKNAME         "Bank Name"
   FROM emp
- WHERE EMP_STATUS = 'A'
+ WHERE empcode  IN ('INM-000001', 'IPI-001372')
