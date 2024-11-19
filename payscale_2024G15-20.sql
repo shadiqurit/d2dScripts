@@ -1,4 +1,4 @@
-/* Formatted on 10/27/2024 6:09:06 PM (QP5 v5.362) */
+/* Formatted on 11/19/2024 11:07:40 AM (QP5 v5.362) */
   SELECT EMPCODE,
          E_NAME,
          EMP_STATUS,

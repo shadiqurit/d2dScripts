@@ -1,8 +1,8 @@
-/* Formatted on 11/Jun/24 3:35:36 PM (QP5 v5.362) */
+/* Formatted on 11/19/2024 11:07:34 AM (QP5 v5.362) */
 SELECT empcode          "ID No",
        e_name           "Sub A/C Name",
        FATHER_NAME      "Father Name",
-       MOTHER_NAME      "Mother Name", 
+       MOTHER_NAME      "Mother Name",
        SPOUSE_NAME      "Spouse Name",
        SALARYGRADE      "Rank Code (Grade)",
        PHONE,
@@ -20,4 +20,6 @@ SELECT empcode          "ID No",
        BRANCH_NAME      "Branch Name",
        BANKNAME         "Bank Name"
   FROM emp
- WHERE empcode  IN ('INM-000001', 'IPI-001372')
+ WHERE empcode IN ('IPI-009521')
+ 
+ --UPDATED ON 19-NOV-2024

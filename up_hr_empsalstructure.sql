@@ -1,7 +1,7 @@
-/* Formatted on 24/Aug/24 2:58:54 PM (QP5 v5.362) */
+/* Formatted on 11/19/2024 11:07:47 AM (QP5 v5.362) */
 DECLARE
     CURSOR dt IS
-          SELECT empcode,
+        SELECT empcode,
                DESIGCODE,
                AMOUNTPRV,
                amountcur,
