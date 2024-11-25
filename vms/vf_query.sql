@@ -1,4 +1,4 @@
-/* Formatted on 11/25/2024 3:49:37 PM (QP5 v5.362) */
+/* Formatted on 11/25/2024 3:58:42 PM (QP5 v5.362) */
 SELECT mst.VAT_FORMULA_SLNO                  vfid,
        mst.PRODUCT_CODE                      prodid,
        mst.ENTRY_DATE                        edt,
@@ -29,8 +29,6 @@ SELECT mst.VAT_FORMULA_SLNO                  vfid,
        mst.NUMBEROFCO                        ncofn
   FROM VAT_FORMULATION mst;
 
-
-
 SELECT dtl.VAT_FORMULA_SLNO      vfid,
        dtl.RMPMEXP_CODE          rmid,
        dtl.EXP_CODE              expid,
@@ -57,8 +55,6 @@ SELECT dtl.VAT_FORMULA_SLNO      vfid,
   FROM RMPMEXP_VAT_FORMULA_MASTER dtl
  WHERE VAT_FORMULA_SLNO = :P444_VAT_FORMULA_SLNO;
 
-
- /* Formatted on 11/25/2024 3:55:49 PM (QP5 v5.362) */
 SELECT mst.vat_formula_slno                  vfid,
        mst.product_code                      prodid,
        mst.entry_date                        edt,
