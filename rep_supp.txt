@@ -22,6 +22,8 @@ sdf23423d
 
 1185964227
 sadiq123#
+administrator
+Ipi123$#@
 
 Wm@1973
 
@@ -41,9 +43,12 @@ Comp742Ipi
 ipihr/i@ipihr 
 
 
+271785
+273488
+
 SELECT empcode, E_NAME,web_password
   FROM emp
-WHERE empcode = 'IPI-006939';
+WHERE empcode = 'IPI-000049';
 
 
 IN ('IPI-002760','IPI-004305','IPI-006410','IPI-004295','IPI-000822','IPI-004160','IPI-006231','IPI-007478')
