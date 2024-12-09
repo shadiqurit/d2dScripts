@@ -1,4 +1,4 @@
-/* Formatted on 11/7/2024 4:53:02 PM (QP5 v5.362) */
+/* Formatted on 12/8/2024 12:32:09 PM (QP5 v5.362) */
 ---Department Wise Leave Approve---
 
 UPDATE leave_approval
@@ -25,6 +25,7 @@ COMMIT;
 
 
 ---Leave approval MD-- 
+
 UPDATE leave_approval
    SET STATUS_L5 = 'Y', FINAL_APPROVAL_DATE = SYSDATE
  WHERE     EMPCODE_4_MD = 'IPI-000789'
@@ -34,7 +35,6 @@ UPDATE leave_approval
        AND empcode IN (SELECT empcode FROM ipihr.emp);
 
 COMMIT;
-
 
 
 
