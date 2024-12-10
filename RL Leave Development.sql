@@ -1,8 +1,9 @@
-/* Formatted on 12/9/2024 5:34:00 PM (QP5 v5.362) */
+/* Formatted on 12/10/2024 12:28:23 PM (QP5 v5.362) */
 SELECT DPUSER.get_leave_balance (TRIM (UPPER ( :APP_USER)),
                                  UPPER ( :P145_LEAVE_TYPE))    A
   FROM DUAL;
 
+--V_EMP60MINUS
 --leave_policy_web
 --LEAVEPOLICY_LINK_V
 --V_EMP60PLUS
@@ -31,8 +32,8 @@ UPDATE hr_leave_child
 
 BEGIN
     ipi_leave_calc_2;
-    --   ipi_leave_calc_2_rl;
-    ipi_leave_calc_2_rl;
+--   ipi_leave_calc_2_rl;
+-- ipi_leave_calc_2_rl;
 END;
 
   SELECT leavetypename d, leave_type r
