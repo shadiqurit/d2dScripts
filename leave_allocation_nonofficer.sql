@@ -21,9 +21,9 @@ END;
 
 
 
-SELECT f_get_leave_balance ('IPI-002068', 'EL') FROM DUAL;
+SELECT f_get_leave_balance ('IPI-003352', 'EL') FROM DUAL;
 
-SELECT dpuser.get_leave_balance ('IPI-002068', 'EL') FROM DUAL;
+SELECT dpuser.get_leave_balance ('IPI-003352', 'EL') FROM DUAL;
 
 SELECT EMPCODE, ELAVAILABLE FROM V_IPI_LEAVE_REPORT;
 
