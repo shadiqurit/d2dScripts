@@ -11,7 +11,7 @@ SELECT empcode,
        emp_status,
        WEB_PASSWORD
   FROM emp
- WHERE empcode = 'IPI-008204';
+ WHERE empcode = 'IPI-006410';
 
 SELECT empcode,
        e_name,
