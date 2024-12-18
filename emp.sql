@@ -4,6 +4,8 @@ SELECT empcode,
        CONFIRM_ST,
        BIRTHDATE,
        salarygrade,
+       REFRESHMENT_GRADE,
+     
        desig_code,
        desig_name,
        salarystep,
@@ -11,7 +13,7 @@ SELECT empcode,
        emp_status,
        WEB_PASSWORD
   FROM emp
- WHERE empcode = 'IPI-006410';
+ WHERE empcode in ('IPI-004598', 'IPI-000808', 'IPI-002396' );
 
 SELECT empcode,
        e_name,

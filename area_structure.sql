@@ -1,4 +1,4 @@
-/* Formatted on 12/17/2024 12:18:07 PM (QP5 v5.362) */
+/* Formatted on 12/18/2024 11:53:31 AM (QP5 v5.362) */
 SELECT * FROM AREA_STRUCTURE@NewSales;
 
 SELECT ID,
@@ -47,8 +47,6 @@ CREATE TABLE AREA_STRUCTURE
 ALTER TABLE AREA_STRUCTURE
     ADD (PRIMARY KEY (ID));
 
-
-
 CREATE OR REPLACE PROCEDURE p_area_structure
 AS
 BEGIN
@@ -71,25 +69,25 @@ BEGIN
                        UPDATED_ON,
                        UPDATED_BY,
                        ORC_INSERT_DATE
-                  FROM v_area_struct) source
-            ON (target.ID = source.ID)                      -- Match condition
+                  FROM v_area_struct) src
+            ON (target.ID = src.ID)                      -- Match condition
     WHEN MATCHED
     THEN
-        UPDATE SET target.AREA_ID = source.AREA_ID,
-                   target.AREA_NAME = source.AREA_NAME,
-                   target.PARENT_LEVEL_ID = source.PARENT_LEVEL_ID,
-                   target.PARENT_LEVEL_NAME = source.PARENT_LEVEL_NAME,
-                   target.LEVEL0_ID = source.LEVEL0_ID,
-                   target.LEVEL0_NAME = source.LEVEL0_NAME,
-                   target.LEVEL1_ID = source.LEVEL1_ID,
-                   target.LEVEL1_NAME = source.LEVEL1_NAME,
-                   target.LEVEL2_ID = source.LEVEL2_ID,
-                   target.LEVEL2_NAME = source.LEVEL2_NAME,
-                   target.LEVEL3_ID = source.LEVEL3_ID,
-                   target.LEVEL3_NAME = source.LEVEL3_NAME,
+        UPDATE SET target.AREA_ID = src.AREA_ID,
+                   target.AREA_NAME = src.AREA_NAME,
+                   target.PARENT_LEVEL_ID = src.PARENT_LEVEL_ID,
+                   target.PARENT_LEVEL_NAME = src.PARENT_LEVEL_NAME,
+                   target.LEVEL0_ID = src.LEVEL0_ID,
+                   target.LEVEL0_NAME = src.LEVEL0_NAME,
+                   target.LEVEL1_ID = src.LEVEL1_ID,
+                   target.LEVEL1_NAME = src.LEVEL1_NAME,
+                   target.LEVEL2_ID = src.LEVEL2_ID,
+                   target.LEVEL2_NAME = src.LEVEL2_NAME,
+                   target.LEVEL3_ID = src.LEVEL3_ID,
+                   target.LEVEL3_NAME = src.LEVEL3_NAME,
                    target.UPDATED_ON = SYSTIMESTAMP,
-                   target.UPDATED_BY = source.UPDATED_BY,
-                   target.ORC_INSERT_DATE = source.ORC_INSERT_DATE
+                   target.UPDATED_BY = src.UPDATED_BY,
+                   target.ORC_INSERT_DATE = src.ORC_INSERT_DATE
     WHEN NOT MATCHED
     THEN
         INSERT     (ID,
@@ -110,24 +108,24 @@ BEGIN
                     UPDATED_ON,
                     UPDATED_BY,
                     ORC_INSERT_DATE)
-            VALUES (source.ID,
-                    source.AREA_ID,
-                    source.AREA_NAME,
-                    source.PARENT_LEVEL_ID,
-                    source.PARENT_LEVEL_NAME,
-                    source.LEVEL0_ID,
-                    source.LEVEL0_NAME,
-                    source.LEVEL1_ID,
-                    source.LEVEL1_NAME,
-                    source.LEVEL2_ID,
-                    source.LEVEL2_NAME,
-                    source.LEVEL3_ID,
-                    source.LEVEL3_NAME,
-                    source.CREATED_ON,
-                    source.CREATED_BY,
+            VALUES (src.ID,
+                    src.AREA_ID,
+                    src.AREA_NAME,
+                    src.PARENT_LEVEL_ID,
+                    src.PARENT_LEVEL_NAME,
+                    src.LEVEL0_ID,
+                    src.LEVEL0_NAME,
+                    src.LEVEL1_ID,
+                    src.LEVEL1_NAME,
+                    src.LEVEL2_ID,
+                    src.LEVEL2_NAME,
+                    src.LEVEL3_ID,
+                    src.LEVEL3_NAME,
+                    src.CREATED_ON,
+                    src.CREATED_BY,
                     SYSTIMESTAMP,
-                    source.UPDATED_BY,
-                    source.ORC_INSERT_DATE);
+                    src.UPDATED_BY,
+                    src.ORC_INSERT_DATE);
 
     COMMIT;                          -- Commit the transaction to save changes
 
@@ -140,7 +138,6 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE ('Error occurred: ' || SQLERRM);
 END p_area_structure;
 /
-
 
 CREATE OR REPLACE PROCEDURE p_sup_area
 AS
@@ -157,18 +154,18 @@ BEGIN
                        UPDATED_ON,
                        UPDATED_BY,
                        ORC_INSERT_DATE
-                  FROM v_sup_area) source
-            ON (target.ID = source.ID) -- Match condition: ID is the unique key
+                  FROM v_sup_area) src
+            ON (target.ID = src.ID) -- Match condition: ID is the unique key
     WHEN MATCHED
     THEN
-        UPDATE SET target.SUP_ID = source.SUP_ID,
-                   target.NAME = source.NAME,
-                   target.AREA_ID = source.AREA_ID,
-                   target.AREA_NAME = source.AREA_NAME,
-                   target.LEVEL_DEPTH_NO = source.LEVEL_DEPTH_NO,
+        UPDATE SET target.SUP_ID = src.SUP_ID,
+                   target.NAME = src.NAME,
+                   target.AREA_ID = src.AREA_ID,
+                   target.AREA_NAME = src.AREA_NAME,
+                   target.LEVEL_DEPTH_NO = src.LEVEL_DEPTH_NO,
                    target.UPDATED_ON = SYSTIMESTAMP,
-                   target.UPDATED_BY = source.UPDATED_BY,
-                   target.ORC_INSERT_DATE = source.ORC_INSERT_DATE
+                   target.UPDATED_BY = src.UPDATED_BY,
+                   target.ORC_INSERT_DATE = src.ORC_INSERT_DATE
     WHEN NOT MATCHED
     THEN
         INSERT     (ID,
@@ -182,17 +179,17 @@ BEGIN
                     UPDATED_ON,
                     UPDATED_BY,
                     ORC_INSERT_DATE)
-            VALUES (source.ID,
-                    source.SUP_ID,
-                    source.NAME,
-                    source.AREA_ID,
-                    source.AREA_NAME,
-                    source.LEVEL_DEPTH_NO,
+            VALUES (src.ID,
+                    src.SUP_ID,
+                    src.NAME,
+                    src.AREA_ID,
+                    src.AREA_NAME,
+                    src.LEVEL_DEPTH_NO,
                     SYSTIMESTAMP,
-                    source.CREATED_BY,
+                    src.CREATED_BY,
                     SYSTIMESTAMP,
-                    source.UPDATED_BY,
-                    source.ORC_INSERT_DATE);
+                    src.UPDATED_BY,
+                    src.ORC_INSERT_DATE);
 
     COMMIT;                                          -- Commit the transaction
 
@@ -205,54 +202,82 @@ EXCEPTION
 END p_sup_area;
 /
 
-
-
 CREATE OR REPLACE PROCEDURE p_rep_area
 AS
 BEGIN
     MERGE INTO REP_AREA target
-    USING (
-        SELECT ID,
-               REP_ID,
-               NAME,
-               REP_CATEGORY,
-               AREA_ID,
-               AREA_NAME,
-               CREATED_ON,
-               CREATED_BY,
-               UPDATED_ON,
-               UPDATED_BY,
-               ORC_INSERT_DATE
-          FROM v_rep_area
-    ) source
-    ON (target.ID = source.ID) -- Match condition: ID as the unique key
-    WHEN MATCHED THEN
-        UPDATE SET
-            target.REP_ID          = source.REP_ID,
-            target.NAME            = source.NAME,
-            target.REP_CATEGORY    = source.REP_CATEGORY,
-            target.AREA_ID         = source.AREA_ID,
-            target.AREA_NAME       = source.AREA_NAME,
-            target.UPDATED_ON      = SYSTIMESTAMP,
-            target.UPDATED_BY      = source.UPDATED_BY,
-            target.ORC_INSERT_DATE = source.ORC_INSERT_DATE
-    WHEN NOT MATCHED THEN
-        INSERT (
-            ID, REP_ID, NAME, REP_CATEGORY, AREA_ID, AREA_NAME,
-            CREATED_ON, CREATED_BY, UPDATED_ON, UPDATED_BY, ORC_INSERT_DATE
-        )
-        VALUES (
-            source.ID, source.REP_ID, source.NAME, source.REP_CATEGORY,
-            source.AREA_ID, source.AREA_NAME, SYSTIMESTAMP, source.CREATED_BY,
-            SYSTIMESTAMP, source.UPDATED_BY, source.ORC_INSERT_DATE
-        );
+         USING (SELECT ID,
+                       REP_ID,
+                       NAME,
+                       REP_CATEGORY,
+                       AREA_ID,
+                       AREA_NAME,
+                       CREATED_ON,
+                       CREATED_BY,
+                       UPDATED_ON,
+                       UPDATED_BY,
+                       ORC_INSERT_DATE
+                  FROM v_rep_area) src
+            ON (target.ID = src.ID) -- Match condition: ID as the unique key
+    WHEN MATCHED
+    THEN
+        UPDATE SET target.REP_ID = src.REP_ID,
+                   target.NAME = src.NAME,
+                   target.REP_CATEGORY = src.REP_CATEGORY,
+                   target.AREA_ID = src.AREA_ID,
+                   target.AREA_NAME = src.AREA_NAME,
+                   target.UPDATED_ON = SYSTIMESTAMP,
+                   target.UPDATED_BY = src.UPDATED_BY,
+                   target.ORC_INSERT_DATE = src.ORC_INSERT_DATE
+    WHEN NOT MATCHED
+    THEN
+        INSERT     (ID,
+                    REP_ID,
+                    NAME,
+                    REP_CATEGORY,
+                    AREA_ID,
+                    AREA_NAME,
+                    CREATED_ON,
+                    CREATED_BY,
+                    UPDATED_ON,
+                    UPDATED_BY,
+                    ORC_INSERT_DATE)
+            VALUES (src.ID,
+                    src.REP_ID,
+                    src.NAME,
+                    src.REP_CATEGORY,
+                    src.AREA_ID,
+                    src.AREA_NAME,
+                    SYSTIMESTAMP,
+                    src.CREATED_BY,
+                    SYSTIMESTAMP,
+                    src.UPDATED_BY,
+                    src.ORC_INSERT_DATE);
 
-    COMMIT; -- Commit transaction
+    COMMIT;                                              -- Commit transaction
 
-    DBMS_OUTPUT.PUT_LINE('Data successfully merged into REP_AREA table.');
+    DBMS_OUTPUT.PUT_LINE ('Data successfully merged into REP_AREA table.');
 EXCEPTION
-    WHEN OTHERS THEN
-        ROLLBACK; -- Rollback transaction in case of an error
-        DBMS_OUTPUT.PUT_LINE('Error occurred: ' || SQLERRM);
+    WHEN OTHERS
+    THEN
+        ROLLBACK;                  -- Rollback transaction in case of an error
+        DBMS_OUTPUT.PUT_LINE ('Error occurred: ' || SQLERRM);
 END p_rep_area;
+/
+
+BEGIN
+    SYS.DBMS_SCHEDULER.DROP_JOB (job_name => 'IPIHR.J_FIELD_EMP_AREA_TRNSF');
+END;
+/
+
+BEGIN
+    DBMS_SCHEDULER.create_job (
+        job_name          => 'J_FIELD_EMP_AREA_TRNSF',
+        job_type          => 'PLSQL_BLOCK',
+        job_action        =>
+            'BEGIN  p_rep_area; p_sup_area; p_area_structure; END;',
+        start_date        => SYSTIMESTAMP,
+        repeat_interval   => 'FREQ=HOURLY; INTERVAL=6',
+        enabled           => TRUE);
+END;
 /
