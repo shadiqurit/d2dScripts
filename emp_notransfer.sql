@@ -1,4 +1,4 @@
-/* Formatted on 12/18/2024 5:17:21 PM (QP5 v5.362) */
+/* Formatted on 12/19/2024 9:53:14 AM (QP5 v5.362) */
   SELECT NULL                 REFNO,
          ep.EMPCODE,
          ep.e_name,
@@ -10,7 +10,7 @@
          NULL                 todepo,
          NULL                 DP_NAME,
          NULL                 INCRTYPE,
-         NULL                 CCODE,
+         CCODE,
          CASE
              WHEN LEAD (JOIN_DATE)
                       OVER (PARTITION BY EMPCODE ORDER BY JOIN_DATE ASC)
@@ -39,5 +39,5 @@
                                FROM HR_REVIEW_HISTORY
                               WHERE incrtype IS NULL)
          AND ep.emp_status = 'A'
-    AND ep.EMPCODE = 'IPI-007514'
+AND ep.EMPCODE = 'IPI-000790'
 ORDER BY JOIN_DATE ASC

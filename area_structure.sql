@@ -1,4 +1,4 @@
-/* Formatted on 12/18/2024 11:53:31 AM (QP5 v5.362) */
+/* Formatted on 12/22/2024 1:03:06 PM (QP5 v5.362) */
 SELECT * FROM AREA_STRUCTURE@NewSales;
 
 SELECT ID,
@@ -70,7 +70,7 @@ BEGIN
                        UPDATED_BY,
                        ORC_INSERT_DATE
                   FROM v_area_struct) src
-            ON (target.ID = src.ID)                      -- Match condition
+            ON (target.ID = src.ID)                         -- Match condition
     WHEN MATCHED
     THEN
         UPDATE SET target.AREA_ID = src.AREA_ID,
@@ -155,7 +155,7 @@ BEGIN
                        UPDATED_BY,
                        ORC_INSERT_DATE
                   FROM v_sup_area) src
-            ON (target.ID = src.ID) -- Match condition: ID is the unique key
+            ON (target.ID = src.ID)   -- Match condition: ID is the unique key
     WHEN MATCHED
     THEN
         UPDATE SET target.SUP_ID = src.SUP_ID,
@@ -218,7 +218,7 @@ BEGIN
                        UPDATED_BY,
                        ORC_INSERT_DATE
                   FROM v_rep_area) src
-            ON (target.ID = src.ID) -- Match condition: ID as the unique key
+            ON (target.ID = src.ID)   -- Match condition: ID as the unique key
     WHEN MATCHED
     THEN
         UPDATE SET target.REP_ID = src.REP_ID,
@@ -281,3 +281,56 @@ BEGIN
         enabled           => TRUE);
 END;
 /
+
+
+
+BEGIN
+    p_sup_area;
+    p_area_structure;
+    p_rep_area;
+END;
+
+
+
+SELECT COUNT (REP_ID)     cnt
+  FROM rep_area
+ WHERE REP_ID NOT IN (SELECT sup_id FROM sup_area);
+
+SELECT COUNT (sup_id)     cnt
+  FROM sup_area
+ WHERE sup_id NOT IN (SELECT REP_ID FROM rep_area);
+
+
+SELECT LEVEL0_NAME,
+       LEVEL1_NAME,
+       LEVEL2_NAME,
+       AREA_NAME
+  FROM area_structure
+ WHERE area_id IN
+           (SELECT CASE
+                       WHEN REP_CATEGORY IN ('A', 'B', 'Z')
+                       THEN
+                           AREA_ID
+                       WHEN REP_CATEGORY = 'SV' AND AREA_ID LIKE 'SV%'
+                       THEN
+                           AREA_ID
+                       ELSE
+                           NULL
+                   END    AS AREA_ID
+              FROM rep_area
+             WHERE     rep_id = :P557_EMPCODE
+                   AND (   (REP_CATEGORY IN ('A', 'B'))
+                        OR (REP_CATEGORY = 'SV' AND AREA_ID LIKE 'SV%'))
+             FETCH FIRST 1 ROW ONLY);
+
+
+SELECT CASE
+           WHEN REP_CATEGORY IN ('A', 'B', 'Z') THEN AREA_ID
+           WHEN REP_CATEGORY = 'SV' AND AREA_ID LIKE 'SV%' THEN AREA_ID
+           ELSE NULL
+       END    AS AREA_ID
+  FROM rep_area
+ WHERE     rep_id = :P557_EMPCODE
+       AND (   (REP_CATEGORY IN ('A', 'B'))
+            OR (REP_CATEGORY = 'SV' AND AREA_ID LIKE 'SV%'))
+ FETCH FIRST 1 ROW ONLY;
