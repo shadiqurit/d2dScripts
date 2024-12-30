@@ -116,3 +116,6 @@ FROM
 WHERE
         nvl(b.check_status, '#') = 'Y' --AND b.CHECK_EMP = :APP_USER  -- OR b.CHECK_EMP = 'IPI-007470' )
     AND a.emp_code = b.emp_code;
+	
+	
+	---
