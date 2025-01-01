@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  font-family: Sans-serif, Verdana;
+  padding-top: 30px;
+}
+#wheel-container {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  margin: 30px auto 0;
+  padding: 20px;
+  border-radius: 50%;
+  background-color: #fff5b4;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(0deg);
+  transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.sector {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 60%;
+  padding-top: 5%;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sector:after {
+  content: "";
+  clip-path: polygon(51% 50%, 101% 0%, 100% 100%, 270% -11%);
+  background: linear-gradient(60deg, #fff 75%, #007aff 95%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.sector:nth-child(even):after {
+  background: linear-gradient(60deg, #007aff 35%, #fff 75%);
+}
+
+.sector:nth-child(1) {
+  transform: rotate(-60deg);
+}
+.sector:nth-child(2) {
+  transform: rotate(-30deg);
+}
+.sector:nth-child(3) {
+  transform: rotate(0deg);
+}
+.sector:nth-child(4) {
+  transform: rotate(30deg);
+}
+.sector:nth-child(5) {
+  transform: rotate(60deg);
+}
+.sector:nth-child(6) {
+  transform: rotate(90deg);
+}
+.sector:nth-child(7) {
+  transform: rotate(120deg);
+}
+.sector:nth-child(8) {
+  transform: rotate(150deg);
+}
+.sector:nth-child(9) {
+  transform: rotate(180deg);
+}
+.sector:nth-child(10) {
+  transform: rotate(210deg);
+}
+.sector:nth-child(11) {
+  transform: rotate(240deg);
+}
+.sector:nth-child(12) {
+  transform: rotate(270deg);
+}
+
+.content {
+  transform: translateY(-110px) translateX(45px) rotate(60deg);
+  text-align: center;
+  padding-top: 60px;
+  position: relative;
+  min-height: 60px;
+  min-width: 100px;
+}
+
+.number.start {
+  color: #006dff;
+}
+.number {
+  position: relative;
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 1;
+  color: #333;
+}
+.label {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+#spin span i {
+  font-size: 15px;
+}
+#spin span {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(50% 50% at 50% 50%, #83afff 0%, #0065dc 100%);
+  box-shadow: -7px 7px 7px rgba(0, 0, 0, 0.25);
+  font-size: 35px;
+  font-weight: 900;
+  color: #fff5bb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 50%;
+  top: 10px;
+  left: 10px;
+  text-transform: uppercase;
+}
+
+#spin {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  top: calc(50% - 70px);
+  left: calc(50% - 70px);
+  z-index: 9;
+  background-image: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(108, 182, 247, 0.5) 0%,
+    rgba(0, 106, 207, 0.5) 100%
+  );
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.arrow {
+  position: absolute;
+  left: calc(50% - 30px);
+  top: -30px;
+  z-index: 9;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 55px 30px 0 30px;
+  border-color: #ff4532 transparent transparent transparent;
+  transform: rotate(0deg);
+  filter: drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.5));
+}
+
+#stats {
+  position:absolute;
+  width:100px;
+  right:30px;
+  top:20px;
+  background: linear-gradient(315deg, rgba(206,196,255,1) 0%, rgba(188,248,255,1) 100%);
+  border-radius:7px;
+  padding:20px;
+  line-height:25px;
+  box-shadow:5px 5px 20px rgba(0,0,0,.2)
+}
+
+    </style>
+</head>
+<body>
+    <div id="wheel-container">
+        <span class="arrow"></span>
+        <a id="spin" href="#">
+          <span><i class="small">Click to</i>Spin</span>
+        </a>
+        <div id="wheel">
+          <div class="sector" data-value="0">
+            <div class="content">
+              <div class="number start">GO</div>
+            </div>
+          </div>
+          <div class="sector" data-value="0">
+            <div class="content">
+              <div class="number">0</div>
+              <div class="label">Points</div>
+            </div>
+          </div>
+          <div class="sector" data-value="10">
+            <div class="content">
+              <div class="number">10</div>
+              <div class="label">Points</div>
+            </div>
+          </div>
+          <div class="sector" data-value="20">
+            <div class="content">
+              <div class="number">20</div>
+              <div class="label">Points</div>
+            </div>
+          </div>
+          <div class="sector" data-value="30">
+            <div class="content">
+              <div class="number">30</div>
+              <div class="label">Points</div>
+            </div>
+          </div>
+          <div class="sector" data-value="40">
+            <div class="content">
+              <div class="number">40</div>
+              <div class="label">Points</div>
+            </div>
+          </div>
+          <div class="sector" data-value="50">
+            <div class="content">
+              <div class="number">50</div>
+              <div class="label">Points</div>
+            </div>
+          </div>
+          <div class="sector" data-value="60">
+            <div class="content">
+              <div class="number">60</div>
+              <div class="label">Points</div>
+            </div>
+          </div>
+          <div class="sector" data-value="70">
+            <div class="content">
+              <div class="number">70</div>
+              <div class="label">Points</div>
+            </div>
+          </div>
+          <div class="sector" data-value="80">
+            <div class="content">
+              <div class="number">80</div>
+              <div class="label">Points</div>
+            </div>
+          </div>
+          <div class="sector" data-value="90">
+            <div class="content">
+              <div class="number">90</div>
+              <div class="label">Points</div>
+            </div>
+          </div>
+          <div class="sector initial-sector" data-value="100">
+            <div class="content">
+              <div class="number">100</div>
+              <div class="label">Points</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="stats">
+        <div>Rotation #: <span id="rotation">0</span></div>
+        <div>Your Prize: <span id="prize">0</span></div>
+      </div>
+
+      <script>
+        let currentTopSector = 0,
+  currentRotation = 0,
+  rotationNumber = 0,
+  rotationCount = document.getElementById("rotation"),
+  prizeStat = document.getElementById("prize");
+
+document.getElementById("spin").addEventListener("click", function () {
+  const wheel = document.getElementById("wheel");
+  let selectedIndex;
+
+  do {
+    selectedIndex = Math.floor(Math.random() * 12);
+  } while (selectedIndex === 0);
+
+  let relativeRotation = (selectedIndex - currentTopSector + 12) % 12;
+  let rotation = relativeRotation * 30 + 3 * 360;
+
+  currentRotation += rotation;
+  rotationNumber++;
+  wheel.style.transform = `rotate(${currentRotation}deg)`;
+  currentTopSector = selectedIndex;
+
+  let currentSectorIndex = 12 - currentTopSector,
+    prize = document.getElementsByClassName("sector")[currentSectorIndex]
+      .dataset.value;
+
+  setTimeout(() => {
+    if (prize === "0") {
+      console.warn(`Sorry, you win ${prize} points, try again!`);
+    } else {
+      console.log(`You win ${prize} points!`);
+    }
+    rotationCount.innerHTML = rotationNumber;
+    prizeStat.innerHTML = prize;
+  }, 4000);
+});
+
+      </script>
+</body>
+</html>

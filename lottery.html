@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Picker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #name-display {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chal Samity</h1>
+    <div id="name-display">Click the button to pick Winner</div>
+    <button onclick="pickName()">Pick a Name</button>
+
+    <script>
+        const names = [
+            "Khalil-1", "Khalil-2", "Imran", "Arafat-1", "Arafat-2", "Sadiq", "AB Ahad", "Rajon", "Lutfur"
+        ];
+
+        function pickName() {
+            if (names.length === 0) {
+                document.getElementById("name-display").innerText = "All names have been picked!";
+                return;
+            }
+
+            const randomIndex = Math.floor(Math.random() * names.length);
+            const selectedName = names[randomIndex];
+            document.getElementById("name-display").innerText = selectedName;
+
+            // Remove the selected name from the array
+            names.splice(randomIndex, 1);
+        }
+    </script>
+</body>
+</html>
