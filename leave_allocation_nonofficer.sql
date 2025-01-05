@@ -1,4 +1,4 @@
-/* Formatted on 10/20/2024 5:14:20 PM (QP5 v5.362) */
+/* Formatted on 1/5/2025 2:06:27 PM (QP5 v5.362) */
 DELETE FROM HR_LEAVE_CHILD
       WHERE     YEAR = 2024
             AND LEAVE_TYPE = 'EL'
@@ -21,9 +21,9 @@ END;
 
 
 
-SELECT f_get_leave_balance ('IPI-003352', 'EL') FROM DUAL;
+SELECT f_get_leave_balance ('IPI-007514', 'EL') FROM DUAL;
 
-SELECT dpuser.get_leave_balance ('IPI-003352', 'EL') FROM DUAL;
+SELECT dpuser.get_leave_balance ('IPI-007514', 'EL') FROM DUAL;
 
 SELECT EMPCODE, ELAVAILABLE FROM V_IPI_LEAVE_REPORT;
 
