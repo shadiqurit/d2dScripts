@@ -1,0 +1,15 @@
+span.t-Login-logo {
+    background-image: url(#APP_IMAGES#orion_group_logo2.jpg);
+    background-size:   cover; 
+    width: 120px;
+    height:120px;
+    
+  }
+  
+  .t-PageBody--login {
+      background-color: #DEE1E3;
+      background-image: linear-gradient(rgba(0,0,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.05) 1px,transparent 1px),linear-gradient(rgba(0,0,0,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.035) 1px,transparent 1px);
+      background-size: 96px 96px,96px 96px,24px 24px,24px 24px;
+      background-position: -1px -1px;
+      min-width: 0;
+  }
