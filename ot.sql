@@ -89,3 +89,46 @@ SELECT o.refno,
        AND A.ATTDATE BETWEEN TO_DATE ('12/1/2024', 'MM/DD/YYYY')
                          AND TO_DATE ('12/31/2024', 'MM/DD/YYYY')
 --AND o.empcode = 'IPI-002078'
+
+;
+/* Formatted on 1/16/2025 3:45:12 PM (QP5 v5.362) */
+  SELECT o.REFNO||
+         a.EMPCODE,
+         a.ATTDATE,
+         a.OFFICE_IN_TIME,
+         a.OFFICE_OUT_TIME,
+         OT_STATUS,
+         final_status,
+         a.INTIME,
+         a.OUTTIME,
+         a.STATUS,
+         a.REMARK_LONG,
+         a.IN_LOCATION,
+         a.OUT_LOCATION,
+         o.OTDATE,
+         o.ST1,
+         o.ST1_H,
+         o.ET1,
+         o.ET1_H,
+         o.ST2,
+         o.ST2_H,
+         o.eT2,
+         o.ET2_H,
+         SECTION_NAME
+    FROM ATT_EMP  a
+         LEFT JOIN OT_APPLICATION o
+             ON a.EMPCODE = o.EMPCODE AND a.ATTDATE = o.OTDATE,
+         OT_MASTER OM
+   WHERE     o.REFNO = OM.REFNO
+         AND o.OTDATE BETWEEN TO_DATE ('12/1/2024', 'MM/DD/YYYY')
+                          AND TO_DATE ('12/31/2024', 'MM/DD/YYYY')
+         AND a.INTIME <= o.ST1
+         AND o.ST1_h IS NULL
+         AND o.ST2_h IS NULL
+         -- AND o.ST2_h IS NULL
+         AND NVL (remark_long, '#') not in( 'Due to duty outside office', 'Holiday', 'ipi duty')
+         --AND o.EMPCODE = 'IPI-008347'
+         AND O.REFNO not in (28109,28110, 27208,27352, 27876)
+         and in_location not like '%Head Office%'
+         --and  O.REFNO = 27367
+ORDER BY a.EMPCODE, a.ATTDATE;

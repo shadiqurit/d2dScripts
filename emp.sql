@@ -12,7 +12,7 @@ SELECT empcode,
        emp_status,
        WEB_PASSWORD
   FROM emp
- WHERE empcode in ('IPI-008393', 'IPI-005315', 'IPI-002396', 'IPI-007797' );
+ WHERE empcode in ('IPI-004021', 'IPI-002001', 'INM-000010', 'IPI-007797' );
 
 SELECT empcode,
        e_name,
