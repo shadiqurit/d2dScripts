@@ -1,18 +1,24 @@
-/* Formatted on 12/9/2024 12:50:31 PM (QP5 v5.362) */
+/* Formatted on 1/21/2025 9:07:37 AM (QP5 v5.362) */
 SELECT empcode,
        e_name,
        CONFIRM_ST,
        BIRTHDATE,
        salarygrade,
-       REFRESHMENT_GRADE,     
+       REFRESHMENT_GRADE,
        desig_code,
        desig_name,
        salarystep,
        salaryscal,
        emp_status,
-       WEB_PASSWORD
+       WEB_PASSWORD,
+       BLD_GROUP
   FROM emp
- WHERE empcode in ('IPI-004021', 'IPI-002001', 'INM-000010', 'IPI-007797' );
+ WHERE empcode IN ('IPI-009394',
+                   'IPI-009397',
+                   'IPI-009395',
+                   'IPI-009382',
+                   'IPI-009350',
+                   'IPI-009358');
 
 SELECT empcode,
        e_name,
