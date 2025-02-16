@@ -90,10 +90,7 @@ DECLARE
                                'IPI-007211',
                                'IPI-001620',
                                'IPI-007787')
-               AND TRNDATE BETWEEN TO_DATE ('29/Jul/24 9:00:26 AM',
-                                            'DD/MON/YY HH:MI:SS AM')
-                               AND TO_DATE ('29/Jul/24 10:00:26 AM',
-                                            'DD/MON/YY HH:MI:SS AM')
+               
                AND SLNO = 37;
 BEGIN
     FOR x IN dt

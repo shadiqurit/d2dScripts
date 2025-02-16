@@ -1,15 +1,33 @@
-'IPI-004918',
-'IPI-004927',
-'IPI-005431',
-'IPI-006072',
-'IPI-007087',
-'IPI-007162',
-'IPI-008501',
-'IPI-008514',
-'IPI-008877',
-'IPI-008878',
-'IPI-005823'
 
+htp.p('</page>
+      
+      
+  
+  <style>
+    page[size="A4"] {
+      background: white;
+      width:100mm;
+      height: 200mm;
+      
+      display: block;
+            
+      
+    }
+  
+ 
+      
+    @media print {
+      body, page[size="A4_land"] {
+        margin:0in;
+        box-shadow: 1px;
+      }
+    }
+
+  </style>
+      ');
+
+
+      
 
 
 

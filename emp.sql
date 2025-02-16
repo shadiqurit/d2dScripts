@@ -13,12 +13,7 @@ SELECT empcode,
        WEB_PASSWORD,
        BLD_GROUP
   FROM emp
- WHERE empcode IN ('IPI-009394',
-                   'IPI-009397',
-                   'IPI-009395',
-                   'IPI-009382',
-                   'IPI-009350',
-                   'IPI-009358');
+ WHERE empcode IN ('INM-000202');
 
 SELECT empcode,
        e_name,

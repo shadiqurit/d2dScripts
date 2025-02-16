@@ -1,0 +1,125 @@
+Htp.p('<input id="b_print" type="button" style="float:right;Background-Color:#3498DB;Color:White;"  onClick="printdiv(''div_print'');" value=" Print"><br/> <div id="div_print" align="center" class="page" width="100%">');
+    declare
+    vId Number:=0;
+    
+    begin
+    
+     
+    htp.p('<page size="A4_land"><div style="height:2px;"></div>');
+    
+    
+    for a in (SELECT  Empcode, Empcodeold, desig_name, Department_name ,Qualification ,Location ,Join_date ,Contract_period ,confirm_due_date ,e_name ,
+    controll_officer ,Knowlege_work ,qulality_work ,Initiative_creativity, commication_Bangla ,commication_enlish ,commication_Wr_Bangla ,commication_wr_english ,
+    initia_self_develp ,capability_work ,capability_Carryout ,self_prentation ,behaviors ,Field_performance ,Over_comment_cor ,Rconmmend_dept_head ,
+    RECOMMEND_DEPT_1,recommend_dept_2 ,recommend_dept_3,Knworksn,Qwork, Ic,Cvb,Cve,Cwb,Cwe,Isd,Cw,Cc,Sp, Be, Total,case when supervisor_empcode=nvl(supervisor_empcode,0) then ACR_Approval(supervisor_empcode)
+    else ACR_Approval(dpt_head_empcode) end A_NAME,ACR_Approval(dpt_head_empcode) DPT_HEAD_EMPCODE from jcr
+    where ID=:p163_id)
+    
+    
+    loop
+    vId:=vId+1;
+    
+    htp.p('<div style="position:relative; height:200mm; width:210 mm; float:left; ;margin-left:30px;margin-bottom:20px;">
+          <div style="position:absolute;top:1cm;   left:0cm;    width:210mm; height:3.6cm; font-size:1.12em; font-family: Times New Roman; border:1px;text-align: left;"> <p> Form No : 07-01-IPI-F008 </p></div>
+           <div style="position:absolute;top:1cm;  left:21cm;  width:210mm; height:3.6cm; font-size:1.12em; font-family: Times New Roman; border:1px;text-align: left;"><p> Rev.:03 <br> Date:10-08-2020</p></div>
+          <div style="position:absolute;top:1.7cm;  left:.5cm;    width:230mm; height:3.6cm; font-weight: bold;font-size:1.80em; font-family: Times New Roman; border:1px;text-align: center;"> <p>THE IBN SINA PHARMACUTICAL INDUSTRY LTD. </p></div>
+          <div style="position:absolute; top:3.00cm;  left:2.0cm;    width:210mm; height:4.2cm; font-weight: bold;font-size:1.60em; font-family: Times New Roman; border:1px;text-align: center;"> <p>Job Confirmation Report Form (JCR)</p></div>
+           <div style="position:absolute; top:4.25cm;  left:0cm;  width:210mm; height:1.5cm; font-weight: bold;font-size:1.50em; font-family: Times New Roman; border:1px;text-align: left;"><p>1. Personal Identification</p></div>
+          
+          <div style="position:absolute; top:5.10cm;  left:0.5cm;  width:210mm; height:1.5cm; font-size:1.50em;  font-family: Times New Roman;  border:1px; text-align:left;"><p>Full Name  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;: '||htf.escape_sc(a.E_name)||' </p></div>
+           <div style="position:absolute; top:5.10cm; left:17cm;  width:250mm; height:1.5cm; font-size:1.50em;  font-family: Times New Roman;  border:1px; text-align:left;"><p>Designation &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: '||htf.escape_sc(a.desig_name)||' </p></div>
+          
+                <div style="position:absolute; top:6.10cm;  left:0.5cm;  width:210mm; height:1.5cm; font-size:1.50em;  font-family: Times New Roman;  border:1px; text-align:left;"><p>IPI Staff No &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;: '||htf.escape_sc(a.empcode)||'</p></div>
+           <div style="position:absolute; top:6.10cm; left:17cm;  width:250mm; height:1.5cm; font-size:1.50em;  font-family: Times New Roman;  border:1px; text-align:left;"><p>Department &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp : '||htf.escape_sc(a.department_name)||'</p> </div>
+          
+                <div style="position:absolute; top:7.10cm;   left:0.5cm;  width:210mm; height:1.5cm; font-size:1.50em;  font-family: Times New Roman;  border:1px; text-align:left;"><p>Qualification &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; : '||htf.escape_sc(a.Qualification)||'</p></div>
+           <div style="position:absolute; top:7.10cm;  left:17cm;  width:230mm; height:1.5cm; font-size:1.50em;  font-family: Times New Roman;  border:1px; text-align:left;"><p>Work Station &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;  : '||htf.escape_sc(a.Location)||'</p></div>
+          
+                <div style="position:absolute; top:8.10cm;   left:0.5cm;  width:210mm; height:1.5cm; font-size:1.50em;  font-family: Times New Roman;  border:1px; text-align:left;"><p>Date of Joining &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : '||htf.escape_sc(a.Join_date)||'</p></div>
+           <div style="position:absolute; top:8.10cm;  left:17cm;  width:230mm; height:1.5cm; font-size:1.50em;  font-family: Times New Roman;  border:1px; text-align:left;"><p>Contract Period  &nbsp;&nbsp;&nbsp; :  '||htf.escape_sc(a.Contract_period)||' Months</p></div>
+                <div style="position:absolute; top:9.10cm;   left:0.5cm;  width:210mm; height:1.5cm; font-size:1.50em;  font-family: Times New Roman;  border:1px; text-align:left;"><p>Confirmation Due Date : '||htf.escape_sc(a.confirm_due_date)||' </p></div>
+           <div style="position:absolute; top:9.50cm;   left:0cm;  width:250mm; height:.2cm; font-size:1.50em; display: block;border-top: 2px solid #000000;margin: 1em 0;padding: 0;"></div>
+          <div style="position:absolute; top:10.50cm;   left:0cm;  width:210mm; height:1.5cm; font-weight: bold;font-size:1.50em; font-family: Times New Roman; border:1px;text-align:left;"><p>2.A. &nbsp; Report by the Controlling Officer:'||'</p> </div>
+    
+          <div style="position:absolute; top:11.30cm;  left:1.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px; text-align:left;"><p>1) Knowledge of work &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: '||htf.escape_sc(a.Knworksn)||'</p> </div>
+           <div style="position:absolute; top:12.30cm;  left:1.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px; text-align:left;"><p>2) Quality of work & productivity &nbsp;&nbsp; &nbsp;&nbsp;: '||htf.escape_sc(a.Qwork)||' </p></div>
+           <div style="position:absolute; top:13.30cm;  left:1.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px; text-align:left;"><p>3) Initiative & Creativity &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;: '||htf.escape_sc(a.Ic)||'</p></div>
+           <div style="position:absolute; top:14.30cm;  left:1.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px; text-align:left;"><p>4) Communication skill &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </p></div>
+          
+     
+          <div style="position:absolute; top:15.10cm;  left:6.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px;text-align:left;"><p>a)&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp Verbal : </p>  </div>
+           <div style="position:absolute; top:15.00cm;  left:10.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px;text-align:left;"><table style="border: 1px solid black;padding: 5px;width:170px;font-weight: normal;"><td>'||htf.escape_sc(a.Cvb)||'</td></table></div>
+          <div style="position:absolute; top:15.10cm;  left:15.00cm;  width:30mm; height:1.5cm; font-size:1.50em;padding:5px; font-family: Times New Roman;  border:1px;text-align:left;"><p> Bengali</p> </div>
+           <div style="position:absolute; top:15.00cm;  left:17.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px;text-align:left;"><table style="border: 1px solid black;padding: 5px;width:170px;font-weight: normal;"><td>'||htf.escape_sc(a.Cve)||'</td></table></div>
+           <div style="position:absolute; top:15.10cm;  left:23.00cm;  width:30mm; height:1.5cm; font-size:1.50em; padding:5px;font-family: Times New Roman;  border:1px;text-align:left;"> <p> English </p> </div>
+          
+            <div style="position:absolute; top:16.35cm;  left:6.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px;text-align:left;"><p>b)&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Written : </p> </div>
+           <div style="position:absolute; top:16.25cm;  left:10.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px;text-align:left;"><table style="border: 1px solid black;padding: 5px;width:170px;font-weight: normal;"><td>'||htf.escape_sc(a.Cwb)||'</td></table></div>
+          <div style="position:absolute; top:16.35cm;  left:15.00cm;  width:30mm; height:1.5cm; font-size:1.50em;padding:5px; font-family: Times New Roman;  border:1px;text-align:left;"><p>Bengali </p></div>
+           <div style="position:absolute; top:16.25cm;  left:17.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px;text-align:left;"><table style="border: 1px solid black;padding: 5px;width:170px;font-weight: normal;"><td>'||htf.escape_sc(a.Cwe)||'</td></table></div>
+           <div style="position:absolute; top:16.35cm;  left:23.00cm;  width:30mm; height:1.5cm; font-size:1.50em; padding:5px;font-family: Times New Roman;  border:1px;text-align:left;"><p>English </p></div>
+          
+           <div style="position:absolute; top:17.60cm;  left:1.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px; text-align:left;"><p>5) Initiative for self development &nbsp;&nbsp;&nbsp;&nbsp; : '||htf.escape_sc(a.Isd)||'</p> </div>
+           <div style="position:absolute; top:18.55cm;  left:1.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px; text-align:left;"><p>6) Capability to work under pressure : '||htf.escape_sc(a.Cw)||'</p></div>
+           <div style="position:absolute; top:19.55cm;  left:1.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px; text-align:left;"><p>7) Capability to carryout instructions : '||htf.escape_sc(a.cc)||'</p> </div>
+           <div style="position:absolute; top:20.55cm;  left:1.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px; text-align:left;"><p>8) Self Presentation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: '||htf.escape_sc(a.sp)||'</p></div>
+          
+           <div style="position:absolute; top:21.55cm;  left:1.00cm;  width:210mm; height:1.5cm; font-size:1.50em; font-family: Times New Roman;  border:1px; text-align:left;"><p>9) Behaviors&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : '||htf.escape_sc(a.be)||' </p></div>
+           <div style="position:absolute; top:23.25cm; left:0cm;  width:210mm; height:1.5cm; font-weight: bold;font-size:1.50em; font-family: Times New Roman; border:1px;text-align: left;"><p>B. Field performance report (For field Force):</p> </div>
+            <div style="position:absolute;top:23.30cm;  left:13.00cm;   width:150mm; height:1.5cm; border:1px;font-size:1.30em; font-family: Times New Roman; border:1px;text-align: left;" > <p>('||htf.escape_sc(a.Field_performance)||')</p></div>
+          <div style="position:absolute; top:25.20cm; left:0cm;  width:240mm; height:1.5cm; font-weight: bold;font-size:1.50em; font-family: Times New Roman; border:1px;text-align: left;"><p>C. Overall comments of Controlling Officer: </p> </div>
+          <div style="position:absolute; top:25.20cm; left:12cm;  width:240mm; height:1.5cm; font-weight: normal;font-size:1.30em; font-family: Times New Roman; border:1px;text-align: left;"><p>'||htf.escape_sc(a.Over_comment_cor)||'</p> </div>
+          <div style="position:absolute; top:27.20cm; left:15cm;  width:50mm; height:1.5cm;font-size:1.50em; font-family: Times New Roman; border:1px;text-align: left;"> </div>
+          <div style="position:absolute; top:26.50cm;  left:12.00cm;  width:100mm; height:.1cm; font-size:1.50em; display: block;border-top: 1px solid #000000;margin: 1em 0;padding: 0;"><p>'||htf.escape_sc(a.A_NAME)||'<p></div>
+          <div style="position:absolute; top:28.85cm; left:0cm;  width:210mm; height:1.5cm; font-weight: bold;font-size:1.50em; font-family: Times New Roman; border:1px;text-align: left;"><p>3. Recommendation of Department Head:  </P> </div>
+          <div style="position:absolute; top:28.95cm; left:12cm;  width:210mm; height:1.10cm; font-weight: normal;font-size:1.10em; font-family: Times New Roman; border:1px;text-align: left;"><p>  '||htf.escape_sc(a.Rconmmend_dept_head)||'</P> </div>
+          <div style="position:absolute; top:31.20cm;  left:17.00cm;  width:50mm; height:1.5cm; font-size:1.30em; font-family: Times New Roman;  border:1px;text-align:left;"><table style="border: 1px solid black;padding: 5px;width:100px;font-weight: normal;"><td style="text-align:center;">'||htf.escape_sc(a.total)||'</td></table></div>
+          <div style="position:absolute; top:31.30cm;  left:14.00cm;  width:100mm; height:1.5cm; font-size:1.30em;padding:5px; font-family: Times New Roman;  border:1px;text-align:left;"> <p>Total Point: </p> </div>
+    
+          
+          <div style="position:absolute; top:34.20cm; left:0cm;  width:150mm; height:1.5cm;font-size:1.50em; font-family: Times New Roman; border:1px;text-align: left;"><p>Signature & Date of Head of Department / Factory/Plant, etc. : </div>
+          <div style="position:absolute; top:34.25cm;  left:14.00cm;  width:100mm; height:.1cm; font-size:1.50em; display: block;border-top: 1px solid #000000;margin: 1em 0;padding: 0;">'||htf.escape_sc(a.dpt_head_EMPCODE)||'</div>
+         <div style="position:absolute; top:36.85cm; left:0cm;  width:210mm; height:1.5cm; font-weight: bold;font-size:1.50em; font-family: Times New Roman; border:1px;text-align: left;"><p> Rating Instructions: </div>
+          <div style="position:absolute; top:38.50cm; left:0cm;  width:240mm; height:1.5cm;font-size:1.50em; font-family: Times New Roman; border:1px;text-align: left;"><p> 5- Outstanding, 4- Above Average, 3- Average, 2- Below Average,1- Poor </div>
+          
+          
+          </div>');
+          
+          
+    
+    if mod(vid,1)=0  then  
+    
+    htp.p('<div style="clear:both;"></div></page><page size="A4_land"><div style="height:200mm; width=auto;"></div>');
+    
+    end if;
+    
+    END LOOP;
+    
+    htp.p('</page>
+          
+          
+      
+      <style>
+        page[size="A4"] {
+          background: white;
+          width:100mm;
+          height: 200mm;
+          
+          display: block;
+                
+          
+        }
+      
+     
+          
+        @media print {
+          body, page[size="A4_land"] {
+            margin:0in;
+            box-shadow: 1px;
+          }
+        }
+    
+      </style>
+          ');
+    
+          end;

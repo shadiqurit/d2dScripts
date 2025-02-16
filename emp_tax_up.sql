@@ -19,36 +19,36 @@ DECLARE
 BEGIN
     FOR x IN dt
     LOOP
-        INSERT INTO hr_empsalstructure (SLNO,
-                                        EMPCODE,
-                                        YEARMN,
-                                        YEAROFSTRUC,
-                                        AMOUNTPRV,
-                                        AMOUNTCUR,
-                                        SALPER,
-                                        TRNDATE,
-                                        PARTICULAR,
-                                        HEADCODE,
-                                        REFNO,
-                                        sl)
-             VALUES (x.SLNO,
-                     x.EMPCODE,
-                     202408,
-                     2024,
-                     x.PREV_TAX,
-                     x.CUR_TAX,
-                     x.CUR_TAX,
-                     SYSDATE,
-                     'Income Tax',
-                     x.HEADCODE,
-                     x.REFNO,
-                     55);
-    --        UPDATE hr_empsalstructure b
-    --           SET b.YEARMN = 202408,
-    --               b.AMOUNTPRV = x.PREV_TAX,
-    --               b.AMOUNTCUR = x.CUR_TAX,
-    --               b.SALPER = x.CUR_TAX
-    --         WHERE b.EMPCODE = x.empcode AND b.SLNO = x.SLNO;
+--        INSERT INTO hr_empsalstructure (SLNO,
+--                                        EMPCODE,
+--                                        YEARMN,
+--                                        YEAROFSTRUC,
+--                                        AMOUNTPRV,
+--                                        AMOUNTCUR,
+--                                        SALPER,
+--                                        TRNDATE,
+--                                        PARTICULAR,
+--                                        HEADCODE,
+--                                        REFNO,
+--                                        sl)
+--             VALUES (x.SLNO,
+--                     x.EMPCODE,
+--                     202408,
+--                     2024,
+--                     x.PREV_TAX,
+--                     x.CUR_TAX,
+--                     x.CUR_TAX,
+--                     SYSDATE,
+--                     'Income Tax',
+--                     x.HEADCODE,
+--                     x.REFNO,
+--                     55);
+            UPDATE hr_empsalstructure b
+               SET b.YEARMN = 202408,
+                   b.AMOUNTPRV = x.PREV_TAX,
+                   b.AMOUNTCUR = x.CUR_TAX,
+                   b.SALPER = x.CUR_TAX
+             WHERE b.EMPCODE = x.empcode AND b.SLNO = x.SLNO;
     END LOOP;
 
     COMMIT;

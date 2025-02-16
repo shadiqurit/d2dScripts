@@ -1,0 +1,41 @@
+/* Formatted on 2/13/2025 10:20:33 AM (QP5 v5.362) */
+CREATE TABLE PM_JOURNAL_JV_12022025
+AS
+    SELECT * FROM PM_JOURNAL_JV;
+
+
+CREATE TABLE PM_JOURNAL_VOUCHER_12022025
+AS
+    SELECT * FROM PM_JOURNAL_VOUCHER;
+
+
+CREATE TABLE wppf_dist_12022025
+AS
+    SELECT * FROM wppf_dist;
+
+
+CREATE TABLE wppf_income_12022025
+AS
+    SELECT * FROM wppf_income;
+
+
+
+    --wppf_dist_to_emp
+
+    --wppf_payable
+
+    --wppf_payment
+
+
+
+DELETE FROM PM_JOURNAL_JV
+      WHERE MVOUCHERNO = 'JVH.O2406-8';
+
+DELETE FROM PM_JOURNAL_VOUCHER
+      WHERE MVOUCHERNO = 'BPAY2411-0001';
+
+DELETE FROM wppf_dist
+      WHERE FIN_YEAR = '2023-2024';
+
+DELETE FROM wppf_income
+      WHERE FIN_YEAR = '2023-2024';

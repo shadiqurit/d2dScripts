@@ -5,7 +5,7 @@ UPDATE refreshment_approval
  WHERE     EMPCODE_4_MD = 'INM-000166'
        AND sl = 4
        AND MONTHWISESL <= 8
-       AND REFRESHMENT_DATE BETWEEN '01-Oct-2024' AND '31-Oct-2024'
+       AND REFRESHMENT_DATE BETWEEN '01-Jan-2025' AND '31-Jan-2025'
        AND empcode IN (SELECT empcode
                          FROM ipihr.emp
                         WHERE dp_code = 'FAC');
@@ -21,7 +21,7 @@ UPDATE refreshment_approval
  WHERE     EMPCODE_4_MD = 'IPI-000789'
        AND sl = 4
        AND MONTHWISESL <= 8
-       AND REFRESHMENT_DATE BETWEEN '01-Nov-2024' AND '30-Nov-2024'
+       AND REFRESHMENT_DATE BETWEEN  '01-Jan-2025' AND '31-Jan-2025'
        AND empcode IN (SELECT empcode
                          FROM ipihr.emp
                         WHERE dp_code = 'FAC');
@@ -37,7 +37,24 @@ UPDATE refreshment_approval
  WHERE     EMPCODE_4_MD = 'IPI-000789'
        AND sl = 4
        AND MONTHWISESL <= 4
-       AND REFRESHMENT_DATE BETWEEN '01-Nov-2024' AND '30-Nov-2024'
+       AND REFRESHMENT_DATE BETWEEN '01-Jan-2025' AND '31-Jan-2025'
+       AND empcode IN (SELECT empcode
+                         FROM ipihr.emp
+                        WHERE dp_code = 'HDO');
+/
+
+
+COMMIT;
+/
+
+
+
+UPDATE refreshment_approval
+   SET FINAL_APPROVAL_DATE = SYSDATE, STATUS_L4 = 'Y'
+ WHERE     EMPCODE_4_MD = 'INM-000166'
+       AND sl = 4
+       AND MONTHWISESL <= 4
+       AND REFRESHMENT_DATE BETWEEN '01-Jan-2025' AND '31-Jan-2025'
        AND empcode IN (SELECT empcode
                          FROM ipihr.emp
                         WHERE dp_code = 'HDO');
