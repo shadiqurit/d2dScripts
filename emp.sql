@@ -12,8 +12,8 @@ SELECT empcode,
        emp_status,
        WEB_PASSWORD,
        BLD_GROUP
-  FROM emp
- WHERE empcode IN ('INM-000202');
+         FROM emp
+ WHERE empcode IN ('IPI-008368', 'IPI-009013', 'IPI-000347', 'IPI-008497');
 
 SELECT empcode,
        e_name,
