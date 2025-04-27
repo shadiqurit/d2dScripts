@@ -1,8 +1,8 @@
 /* Formatted on 1/6/2025 3:54:27 PM (QP5 v5.362) */
   select count (*), ids
-    from (  select empcode,
+    from (  select empid,
                    emp_id,
-                   to_number (emp_id)     ids,
+                   to_number (empid)     ids,
                    length (emp_id),
                    first_namep,
                    last_namep,

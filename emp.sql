@@ -1,4 +1,4 @@
-/* Formatted on 3/11/2025 3:43:04 PM (QP5 v5.362) */
+/* Formatted on 4/24/2025 1:57:16 PM (QP5 v5.362) */
 SELECT empcode,
        e_name,
        CONFIRM_ST,
@@ -13,10 +13,7 @@ SELECT empcode,
        WEB_PASSWORD,
        BLD_GROUP
   FROM emp
- WHERE empcode IN ('IPI-008368',
-                   'IPI-009013',
-                   'IPI-000347',
-                   'IPI-008497');
+ WHERE empcode IN ('IPI-000789');
 
 SELECT empcode,
        e_name,

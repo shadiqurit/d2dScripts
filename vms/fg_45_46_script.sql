@@ -1,0 +1,270 @@
+/* Formatted on 3/16/2025 9:55:08 AM (QP5 v5.362) */
+DROP TABLE GOODS_DISTRIBUTION_M_WFG;
+DROP TABLE GOODS_DISTRIBUTION_M_WFG6;
+DROP TABLE GOODS_DISTRIBUTION_D_WFG;
+DROP TABLE GOODS_DISTRIBUTION_D_WFG6;
+
+CREATE TABLE GOODS_DISTRIBUTION_M_WFG
+(
+    DISTRIBUTION_NO    NUMBER (38),
+    DIST_ID            NUMBER (10),
+    DELIVERY_DATE      DATE,
+    DEL_TO_ID          NUMBER (10),
+    REMARKS            VARCHAR2 (100 BYTE),
+    STATUS             CHAR (1 BYTE),
+    POSTING            CHAR (1 BYTE) DEFAULT 'N',
+    UDT                DATE DEFAULT TO_DATE (SYSDATE, 'DD-MM-YY'),
+    VAR                NUMBER (4),
+    USER_ID            NUMBER (11),
+    ISSUE_TO           VARCHAR2 (2 BYTE),
+    GRN_NO             NUMBER,
+    INV_NO             VARCHAR2 (20 BYTE),
+    UNIT               NUMBER (20),
+    INV_DATE           DATE,
+    COMP_ID            NUMBER (15),
+    TW                 VARCHAR2 (400 BYTE),
+    PL_TIME            DATE,
+    VAT_NO             VARCHAR2 (20 BYTE),
+    DNS_NO             NUMBER (30),
+    DN_NO              VARCHAR2 (20 BYTE),
+    INVOICE_NO         VARCHAR2 (20 BYTE),
+    BATCH_NO           VARCHAR2 (20 BYTE),
+    ITP_NO             NUMBER,
+    IDEN_NO            VARCHAR2 (50 BYTE),
+    CAR_NO             VARCHAR2 (100 BYTE),
+    PLACE              VARCHAR2 (200 BYTE),
+    PL_TIME1           DATE,
+    ISSUE_ID           NUMBER (20),
+    ISSUE_NO           VARCHAR2 (20 BYTE),
+    CM_ID              NUMBER (20),
+    CM_NO              VARCHAR2 (20 BYTE),
+    REC_BATCH_ID       NUMBER (38),
+    DN_ID              NUMBER (20),
+    RPT_DATE_TIME      DATE,
+    USER1              VARCHAR2 (100 BYTE),
+    EXP_TYPE           VARCHAR2 (200 BYTE),
+    CBIN               VARCHAR2 (30 BYTE),
+    ID                 NUMBER,
+    ADDRESS            VARCHAR2 (200 BYTE),
+    HSCODE             VARCHAR2 (200 BYTE),
+    COMPANY_ID         NUMBER
+);
+
+
+
+ALTER TABLE GOODS_DISTRIBUTION_M_WFG
+    ADD (
+        CONSTRAINT GOODS_DISTRIBUTION_M_W_FG_PK PRIMARY KEY (DISTRIBUTION_NO));
+
+
+CREATE OR REPLACE TRIGGER GOODS_DISTRI_M_W_FG_PK
+    BEFORE INSERT OR UPDATE
+    ON GOODS_DISTRIBUTION_M_WFG
+    FOR EACH ROW
+BEGIN
+    IF :NEW.DISTRIBUTION_NO IS NULL
+    THEN
+        SELECT NVL (MAX (DISTRIBUTION_NO), 0) + 1
+          INTO :NEW.DISTRIBUTION_NO
+          FROM GOODS_DISTRIBUTION_M_WFG;
+    END IF;
+END GOODS_DISTRI_M_W_FG_PK;
+/
+
+
+
+CREATE TABLE GOODS_DISTRIBUTION_M_WFG6
+(
+    DISTRIBUTION_NO    NUMBER (38),
+    DIST_ID            NUMBER (10),
+    DELIVERY_DATE      DATE,
+    DEL_TO_ID          NUMBER (10),
+    REMARKS            VARCHAR2 (100 BYTE),
+    STATUS             CHAR (1 BYTE),
+    POSTING            CHAR (1 BYTE) DEFAULT 'N',
+    UDT                DATE DEFAULT TO_DATE (SYSDATE, 'DD-MM-YY'),
+    VAR                NUMBER (4),
+    USER_ID            NUMBER (11),
+    ISSUE_TO           VARCHAR2 (2 BYTE),
+    GRN_NO             NUMBER,
+    INV_NO             VARCHAR2 (20 BYTE),
+    UNIT               NUMBER (20),
+    INV_DATE           DATE,
+    COMP_ID            NUMBER (15),
+    TW                 VARCHAR2 (400 BYTE),
+    PL_TIME            DATE,
+    VAT_NO             VARCHAR2 (20 BYTE),
+    DNS_NO             NUMBER (30),
+    DN_NO              VARCHAR2 (20 BYTE),
+    INVOICE_NO         VARCHAR2 (20 BYTE),
+    BATCH_NO           VARCHAR2 (20 BYTE),
+    ITP_NO             NUMBER,
+    IDEN_NO            VARCHAR2 (50 BYTE),
+    CAR_NO             VARCHAR2 (100 BYTE),
+    PLACE              VARCHAR2 (200 BYTE),
+    PL_TIME1           DATE,
+    ISSUE_ID           NUMBER (20),
+    ISSUE_NO           VARCHAR2 (20 BYTE),
+    CM_ID              NUMBER (20),
+    CM_NO              VARCHAR2 (20 BYTE),
+    REC_BATCH_ID       NUMBER (38),
+    DN_ID              NUMBER (20),
+    RPT_DATE_TIME      DATE,
+    USER1              VARCHAR2 (100 BYTE),
+    EXP_TYPE           VARCHAR2 (200 BYTE),
+    CBIN               VARCHAR2 (30 BYTE),
+    ID                 NUMBER,
+    ADDRESS            VARCHAR2 (200 BYTE),
+    HSCODE             VARCHAR2 (200 BYTE),
+    COMPANY_ID         NUMBER
+);
+
+
+
+ALTER TABLE GOODS_DISTRIBUTION_M_WFG6
+    ADD (
+        CONSTRAINT GOODS_DISTRIBUTION_M_M_WFG6_PK PRIMARY KEY
+            (DISTRIBUTION_NO));
+
+
+CREATE OR REPLACE TRIGGER GOODS_DISTRI_M_M_WFG6_PK
+    BEFORE INSERT OR UPDATE
+    ON GOODS_DISTRIBUTION_M_WFG6
+    FOR EACH ROW
+BEGIN
+    IF :NEW.DISTRIBUTION_NO IS NULL
+    THEN
+        SELECT NVL (MAX (DISTRIBUTION_NO), 0) + 1
+          INTO :NEW.DISTRIBUTION_NO
+          FROM GOODS_DISTRIBUTION_M_WFG6;
+    END IF;
+END GOODS_DISTRI_M_M_WFG6_PK;
+/
+
+
+CREATE TABLE GOODS_DISTRIBUTION_D_WFG
+(
+    DISTRIBUTION_NO    NUMBER (38),
+    PRODUCT_ID         VARCHAR2 (20 BYTE),
+    DEL_QTY            NUMBER (14, 2),
+    VALUE              NUMBER (12, 2),
+    MENUFC_DATE        VARCHAR2 (11 BYTE),
+    BATCH_NO           CHAR (10 BYTE),
+    GRR_NO             NUMBER (12),
+    RATE               NUMBER (18, 6),
+    E_MODE             CHAR (1 BYTE),
+    REMARKS            VARCHAR2 (40 BYTE),
+    RPT_SL             NUMBER (38),
+    UNIT               NUMBER (20),
+    BATCH_STOCK        NUMBER (18, 6),
+    VAT_PER            NUMBER (18, 6),
+    TOT_AMOUNT         NUMBER (18, 6),
+    PK_SIZE            VARCHAR2 (20 BYTE),
+    VAT2               NUMBER (20, 6),
+    VAT1               NUMBER (20, 6),
+    DEDUCTION          NUMBER (20, 6),
+    SD                 NUMBER (20, 6),
+    PUR_VALUE          NUMBER (20, 6),
+    PUR_VAT            NUMBER (20, 6),
+    PUR_QTY            NUMBER (20, 6),
+    PUR_SD             NUMBER (20, 6),
+    TOT_PRICE          NUMBER (20, 6),
+    UNIT_PRICE         NUMBER (20, 6),
+    MU                 VARCHAR2 (200 BYTE),
+    CBIN               VARCHAR2 (30 BYTE),
+    ID                 NUMBER,
+    COMPANY_ID         NUMBER
+);
+
+
+ALTER TABLE GOODS_DISTRIBUTION_D_WFG
+    ADD (CONSTRAINT GOODS_DISTRIBUTION_D_WFG_PK PRIMARY KEY (ID));
+
+
+CREATE OR REPLACE TRIGGER GOODS_DISTRI_D_WFG_PK
+    BEFORE INSERT OR UPDATE
+    ON GOODS_DISTRIBUTION_D_WFG
+    FOR EACH ROW
+BEGIN
+    IF :NEW.id IS NULL
+    THEN
+        SELECT NVL (MAX (id), 0) + 1
+          INTO :NEW.id
+          FROM GOODS_DISTRIBUTION_D_WFG;
+    END IF;
+END GOODS_DISTRI_D_WFG_PK;
+/
+
+
+ALTER TABLE GOODS_DISTRIBUTION_D_WFG
+    ADD (
+        CONSTRAINT GOODS_DISTRIBUTION_D_WFG_R01 FOREIGN KEY (DISTRIBUTION_NO)
+            REFERENCES GOODS_DISTRIBUTION_M_W (DISTRIBUTION_NO)
+            ENABLE VALIDATE,
+        CONSTRAINT GOODS_DISTRIBUTION_D_WFG_R02 FOREIGN KEY (PRODUCT_ID)
+            REFERENCES PRODUCT_INFO (PRODUCT_ID)
+            ENABLE VALIDATE);
+
+
+CREATE TABLE GOODS_DISTRIBUTION_D_WFG6
+(
+    DISTRIBUTION_NO    NUMBER (38),
+    PRODUCT_ID         VARCHAR2 (20 BYTE),
+    DEL_QTY            NUMBER (14, 2),
+    VALUE              NUMBER (12, 2),
+    MENUFC_DATE        VARCHAR2 (11 BYTE),
+    BATCH_NO           CHAR (10 BYTE),
+    GRR_NO             NUMBER (12),
+    RATE               NUMBER (18, 6),
+    E_MODE             CHAR (1 BYTE),
+    REMARKS            VARCHAR2 (40 BYTE),
+    RPT_SL             NUMBER (38),
+    UNIT               NUMBER (20),
+    BATCH_STOCK        NUMBER (18, 6),
+    VAT_PER            NUMBER (18, 6),
+    TOT_AMOUNT         NUMBER (18, 6),
+    PK_SIZE            VARCHAR2 (20 BYTE),
+    VAT2               NUMBER (20, 6),
+    VAT1               NUMBER (20, 6),
+    DEDUCTION          NUMBER (20, 6),
+    SD                 NUMBER (20, 6),
+    PUR_VALUE          NUMBER (20, 6),
+    PUR_VAT            NUMBER (20, 6),
+    PUR_QTY            NUMBER (20, 6),
+    PUR_SD             NUMBER (20, 6),
+    TOT_PRICE          NUMBER (20, 6),
+    UNIT_PRICE         NUMBER (20, 6),
+    MU                 VARCHAR2 (200 BYTE),
+    CBIN               VARCHAR2 (30 BYTE),
+    ID                 NUMBER,
+    COMPANY_ID         NUMBER
+);
+
+ALTER TABLE GOODS_DISTRIBUTION_D_WFG6
+    ADD (CONSTRAINT GOODS_DISTRIBUTION_D_WFG6_PK PRIMARY KEY (ID));
+
+
+CREATE OR REPLACE TRIGGER GOODS_DISTRI_D_WFG6_PK
+    BEFORE INSERT OR UPDATE
+    ON GOODS_DISTRIBUTION_D_WFG6
+    FOR EACH ROW
+BEGIN
+    IF :NEW.id IS NULL
+    THEN
+        SELECT NVL (MAX (id), 0) + 1
+          INTO :NEW.id
+          FROM GOODS_DISTRIBUTION_D_WFG6;
+    END IF;
+END GOODS_DISTRI_D_WFG6_PK;
+/
+
+
+ALTER TABLE GOODS_DISTRIBUTION_D_WFG6
+    ADD (
+        CONSTRAINT GOODS_DISTRIBUTION_D_WFG6_R01 FOREIGN KEY
+            (DISTRIBUTION_NO)
+            REFERENCES GOODS_DISTRIBUTION_M_W (DISTRIBUTION_NO)
+            ENABLE VALIDATE,
+        CONSTRAINT GOODS_DISTRIBUTION_D_WFG6_R02 FOREIGN KEY (PRODUCT_ID)
+            REFERENCES PRODUCT_INFO (PRODUCT_ID)
+            ENABLE VALIDATE);

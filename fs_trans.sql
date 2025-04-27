@@ -1,4 +1,5 @@
-/* Formatted on 12/18/2024 3:57:14 PM (QP5 v5.362) */
+/* Formatted on 4/15/2025 9:44:00 AM (QP5 v5.362) */
 --COMM_APPROVAL_CHILD
 --FS_TRN_MST
 --FS_TRN_DTL
+--FS_PARTICULARS
