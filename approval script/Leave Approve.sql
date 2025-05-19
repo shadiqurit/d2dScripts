@@ -26,7 +26,7 @@ UPDATE leave_approval
    SET STATUS_L5 = 'Y', FINAL_APPROVAL_DATE = SYSDATE
  WHERE     EMPCODE_4_MD = 'IPI-000789'
        AND sl = 4
-       AND APPROVED_DAYS <= 7
+       AND APPROVED_DAYS <= 3
        AND APPROVED_LEAVE_TYPE IN ('SL')
        AND empcode IN (SELECT empcode FROM ipihr.emp);
 COMMIT;
