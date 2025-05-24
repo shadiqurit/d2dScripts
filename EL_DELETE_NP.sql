@@ -5,7 +5,7 @@
 DELETE
   FROM hr_leave_child
  WHERE     LEAVE_TYPE = 'EL'
-       AND YEAR = 2024
+       AND YEAR = 2025
        AND LEAVEADTYPE = 'Opening'
        AND empcode IN
                (SELECT empcode

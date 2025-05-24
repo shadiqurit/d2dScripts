@@ -1,6 +1,6 @@
 /* Formatted on 1/5/2025 2:06:27 PM (QP5 v5.362) */
 DELETE FROM HR_LEAVE_CHILD
-      WHERE     YEAR = 2024
+      WHERE     YEAR = 2025
             AND LEAVE_TYPE = 'EL'
             AND LEAVEADTYPE = 'Opening'
             AND empcode IN (SELECT empcode
@@ -9,7 +9,19 @@ DELETE FROM HR_LEAVE_CHILD
 
 
 
---             
+--      IPI-003942    
+
+DELETE
+  FROM hr_leave_child
+ WHERE     LEAVE_TYPE = 'EL'
+       AND YEAR = 2025
+       AND LEAVEADTYPE = 'Opening'
+       AND empcode IN
+               (SELECT empcode
+                  FROM emp
+                 WHERE     emp_status = 'A'
+                       AND JOIN_DATE < TO_DATE ('31/Aug/2022', 'DD/MON/YY')
+                       AND CATA = 'NON OFFICER');   
 
 CREATE TABLE hr_leave_child_102024
 AS
