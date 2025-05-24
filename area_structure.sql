@@ -1,5 +1,4 @@
 /* Formatted on 1/5/2025 12:59:44 PM (QP5 v5.362) */
-
 CREATE TABLE t_structure
 (
     id           NUMBER,
