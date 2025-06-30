@@ -48,7 +48,7 @@ SELECT slno,
        desig_name_after
   FROM hr_review_history
  WHERE incrtype IN
-           ('Promotional', 'Accelerated Promotion', 'Management Order');
+           ('Promotional', 'Accelerated Promotion', 'Renaming');
 
 SELECT empcode,
        e_name,

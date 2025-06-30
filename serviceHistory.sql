@@ -1,4 +1,4 @@
-/* Formatted on 5/18/2025 4:38:26 PM (QP5 v5.362) */
+/* Formatted on 6/30/2025 5:55:42 PM (QP5 v5.362) */
 SELECT empcode,
        empno,
        e_name,
@@ -155,9 +155,7 @@ SELECT DISTINCT desig_name_before
           FROM hr_review_history
          WHERE incrtype IN ('Renaming'))
  WHERE rn = 1;
- 
- 
- DELETE FROM hr_review_history
+
+
+DELETE FROM hr_review_history
       WHERE REFNO = '03/2025/34' AND USERNAME = 'M-ORDER';
- 
- 

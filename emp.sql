@@ -4,6 +4,8 @@ SELECT empcode,
        CONFIRM_ST,
        BIRTHDATE,
        salarygrade,
+       JOIN_DATE,
+       TER_DATE,
        REFRESHMENT_GRADE,
        desig_code,
        desig_name,
@@ -13,7 +15,7 @@ SELECT empcode,
        WEB_PASSWORD,
        BLD_GROUP
   FROM emp
- WHERE empcode IN ('IPI-000789');
+ WHERE empcode IN ('IPI-009129');
 
 SELECT empcode,
        e_name,

@@ -11,5 +11,5 @@ DELETE
                (SELECT empcode
                   FROM emp
                  WHERE     emp_status = 'A'
-                       AND JOIN_DATE < TO_DATE ('31/Aug/2022', 'DD/MON/YY')
+                       AND JOIN_DATE <= TO_DATE ('01/Sep/2022', 'DD/MON/YY')
                        AND CATA = 'NON OFFICER')

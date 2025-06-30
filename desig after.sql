@@ -1,4 +1,4 @@
-/* Formatted on 5/18/2025 3:16:04 PM (QP5 v5.362) */
+/* Formatted on 6/30/2025 5:51:36 PM (QP5 v5.362) */
 SELECT *
   FROM hr_base
  WHERE PARENTNAME = 'Designation';
@@ -19,7 +19,6 @@ SELECT DISTINCT desig_name_before
           FROM hr_review_history
          WHERE incrtype IN ('Management Order'))
  WHERE rn = 1;
-
 
 
 
@@ -94,7 +93,7 @@ SELECT slno,
            WHEN desig_name_before = 'MEDICAL PROMOTION OFFICER-2'
            THEN
                'MEDICAL PROMOTION OFFICER'
-       END        AS desig_after
+       END    AS desig_after
   FROM (SELECT slno,
                refdate,
                dept,
@@ -110,21 +109,19 @@ SELECT slno,
           FROM hr_review_history
          WHERE incrtype IN ('Management Order'))
  WHERE rn = 1;
- 
- 
- update  hr_review_history
-set INCRTYPE = 'Renaming'
-WHERE INCRTYPE = 'Management Order'
-and  USERNAME = 'M-ORDER'
-AND REFNO = '03/2025/34';
-
-delete from  hr_review_history
-
-WHERE USERNAME = 'M-ORDER'
-AND REFNO = '03/2025/34';
 
 
-/* Formatted on 5/18/2025 3:19:29 PM (QP5 v5.362) */
+UPDATE hr_review_history
+   SET INCRTYPE = 'Renaming'
+ WHERE     INCRTYPE = 'Management Order'
+       AND USERNAME = 'M-ORDER'
+       AND REFNO = '03/2025/34';
+
+DELETE FROM hr_review_history
+      WHERE USERNAME = 'M-ORDER' AND REFNO = '03/2025/34';
+
+
+
 UPDATE hr_review_history
    SET DESIG_NAME_AFTER =
            CASE

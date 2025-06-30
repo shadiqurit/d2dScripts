@@ -9,6 +9,8 @@ UPDATE leave_approval
                          FROM ipihr.emp
                         WHERE department_name = 'Marketing');
 /
+
+
 ---Leave approval aalll--
 UPDATE leave_approval
    SET STATUS_L5 = 'Y', FINAL_APPROVAL_DATE = SYSDATE
@@ -27,7 +29,7 @@ UPDATE leave_approval
  WHERE     EMPCODE_4_MD = 'IPI-000789'
        AND sl = 4
        AND APPROVED_DAYS <= 3
-       AND APPROVED_LEAVE_TYPE IN ('SL')
+       AND APPROVED_LEAVE_TYPE IN ('CL', 'SL', 'EL')
        AND empcode IN (SELECT empcode FROM ipihr.emp);
 COMMIT;
 
