@@ -1,0 +1,135 @@
+/* Notice Marquee */
+.notice-marquee {
+  background-color: #FBB40F;
+  color: #333;
+  padding: 20px 0;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+  /* Slower speed */
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.root-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 2%;
+  /* Set alignment to center */
+}
+
+/* Child container inherits justify-content from root */
+.container {
+  display: flex;
+  justify-content: inherit;
+  /* Inherits 'center' from the parent */
+}
+
+.column {
+  text-align: center;
+  padding: 2px;
+}
+
+.column-1,
+.column-3 {
+  width: 600px;
+}
+
+.column-2 {
+  width: 300px;
+}
+
+.column-1 img {
+  width: 880px;
+  height: 900px;
+}
+
+/* Main Content Area */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.button {
+  background-color: #8CC640;
+  color: black;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  width: 190px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background-color: #0288d1;
+  color: #fff;
+}
+
+.footer {
+  font-size: 12px;
+  color: #fff;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.label {
+  font-size: 25px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.centered {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* Optional, centers text inside the div */
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FBB40F;
+  color: white;
+  text-align: center;
+}
+
+.footer img {
+  width: auto;
+  height: 100px;
+  float: left;
+  padding-left: 2%;
+}
+
+.footer .ftext {
+  float: right;
+  font-size: 30px;
+  padding-right: 2%;
+}
