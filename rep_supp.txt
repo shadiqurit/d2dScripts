@@ -2,6 +2,10 @@ netsh interface show interface
 netsh interface set interface name="Ethernet" admin=enabled
 netsh interface set interface name="Ethernet" admin=disabled
 
+192.168.5.220
+
+192.168.5.237
+
 https://youtube.com/shorts/d82A9ZiyUcM?si=IIZhADblJU-4jIOu
 ipi-000827
 

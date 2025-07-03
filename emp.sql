@@ -16,6 +16,18 @@ SELECT empcode,
        BLD_GROUP
   FROM emp
  WHERE empcode IN ('IPI-009129');
+ 
+ /* Formatted on 7/2/2025 5:01:46 PM (QP5 v5.362) */
+SELECT empcode                                "Employee ID",
+       e_name                                 AS "Name",
+       CONFIRM_ST                             "Confirmation Status",
+       TO_CHAR (JOIN_DATE, 'DD-MON-YYYY')     "Join Date",
+       desig_name                             "Designation",
+       salarygrade                            "Grade",
+       BLD_GROUP,
+       PHONE                                  "Phone"
+  FROM emp
+ WHERE emp_status = 'A' AND EMPNO LIKE '%API-%';
 
 SELECT empcode,
        e_name,
