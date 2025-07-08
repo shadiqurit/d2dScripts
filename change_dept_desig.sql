@@ -1,4 +1,4 @@
-/* Formatted on 6/30/2025 6:49:29 PM (QP5 v5.362) */
+/* Formatted on 7/7/2025 1:25:41 PM (QP5 v5.362) */
 --vo_review_history
 
 CREATE TABLE hr_base_30_jun_2025
@@ -261,11 +261,12 @@ UPDATE EMP
                WHEN DEPARTMENT_NAME_OLD = 'Marketing'
                THEN
                    'Sales'
-                   else DEPARTMENT_NAME
+               ELSE
+                   DEPARTMENT_NAME
            END
  WHERE emp_status = 'A';
- 
- /* Formatted on 7/1/2025 12:20:24 PM (QP5 v5.362) */
+
+
 UPDATE emp e
    SET desig_sl =
            (SELECT MIN (v.gsl)
@@ -305,8 +306,8 @@ AS
 
 DELETE FROM desig_sl
       WHERE sl BETWEEN 7 AND 40;
-      
-      /* Formatted on 6/30/2025 6:28:36 PM (QP5 v5.362) */
+
+
 SELECT *
   FROM hr_base
  WHERE PARENTNAME = 'Designation';
@@ -420,7 +421,7 @@ SELECT slno,
 
 
 UPDATE hr_review_history
-   SET REFDATE = TO_DATE('7/01/2025', 'MM/DD/YYYY')
+   SET REFDATE = TO_DATE ('7/01/2025', 'MM/DD/YYYY')
  WHERE     INCRTYPE = 'Renaming'
        AND USERNAME = 'M-ORDER'
        AND REFNO = '03/2025/34';
@@ -496,9 +497,9 @@ UPDATE hr_review_history
                    'MEDICAL PROMOTION OFFICER'
            END
  WHERE INCRTYPE = 'Renaming';
- 
- 
- UPDATE EMP
+
+
+UPDATE EMP
    SET desig_name =
            CASE
                WHEN DESIG_NAME_OLD = 'SR. MANAGER'

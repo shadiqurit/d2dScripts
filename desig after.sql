@@ -1,4 +1,4 @@
-/* Formatted on 6/30/2025 6:28:36 PM (QP5 v5.362) */
+/* Formatted on 7/7/2025 1:25:44 PM (QP5 v5.362) */
 SELECT *
   FROM hr_base
  WHERE PARENTNAME = 'Designation';
@@ -112,7 +112,7 @@ SELECT slno,
 
 
 UPDATE hr_review_history
-   SET REFDATE = TO_DATE('7/01/2025', 'MM/DD/YYYY')
+   SET REFDATE = TO_DATE ('7/01/2025', 'MM/DD/YYYY')
  WHERE     INCRTYPE = 'Renaming'
        AND USERNAME = 'M-ORDER'
        AND REFNO = '03/2025/34';
@@ -188,9 +188,9 @@ UPDATE hr_review_history
                    'MEDICAL PROMOTION OFFICER'
            END
  WHERE INCRTYPE = 'Renaming';
- 
- 
- UPDATE EMP
+
+
+UPDATE EMP
    SET desig_name =
            CASE
                WHEN DESIG_NAME_OLD = 'SR. MANAGER'
