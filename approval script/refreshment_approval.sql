@@ -5,7 +5,7 @@ UPDATE refreshment_approval
  WHERE     EMPCODE_4_MD = 'INM-000166'
        AND sl = 4
        AND MONTHWISESL <= 8
-       AND REFRESHMENT_DATE BETWEEN '01-May-2025' AND '31-May-2025'
+       AND REFRESHMENT_DATE BETWEEN '01-Jun-2025' AND '30-Jun-2025'
        AND empcode IN (SELECT empcode
                          FROM ipihr.emp
                         WHERE dp_code = 'FAC');
@@ -21,7 +21,7 @@ UPDATE refreshment_approval
  WHERE     EMPCODE_4_MD = 'IPI-000789'
        AND sl = 4
        AND MONTHWISESL <= 8
-       AND REFRESHMENT_DATE BETWEEN  '01-May-2025' AND '31-May-2025'
+       AND REFRESHMENT_DATE BETWEEN  '01-Jun-2025' AND '30-Jun-2025'
        AND empcode IN (SELECT empcode
                          FROM ipihr.emp
                         WHERE dp_code = 'FAC');
@@ -37,7 +37,7 @@ UPDATE refreshment_approval
  WHERE     EMPCODE_4_MD = 'IPI-000789'
        AND sl = 4
        AND MONTHWISESL <= 4
-       AND REFRESHMENT_DATE BETWEEN '01-May-2025' AND '31-May-2025'
+       AND REFRESHMENT_DATE BETWEEN '01-Jun-2025' AND '30-Jun-2025'
        AND empcode IN (SELECT empcode
                          FROM ipihr.emp
                         WHERE dp_code = 'HDO');
@@ -54,7 +54,7 @@ UPDATE refreshment_approval
  WHERE     EMPCODE_4_MD = 'INM-000166'
        AND sl = 4
        AND MONTHWISESL <= 4
-       AND REFRESHMENT_DATE BETWEEN '01-May-2025' AND '31-May-2025'
+       AND REFRESHMENT_DATE BETWEEN '01-Jun-2025' AND '30-Jun-2025'
        AND empcode IN (SELECT empcode
                          FROM ipihr.emp
                         WHERE dp_code = 'HDO');

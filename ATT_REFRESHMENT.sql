@@ -1,4 +1,3 @@
-/* Formatted on 2/6/2025 12:03:23 PM (QP5 v5.362) */
 CREATE OR REPLACE PROCEDURE IPIHR.att_refreshment (p_fdate         DATE,
                                                    p_tdate         DATE,
                                                    p_empcode       VARCHAR2,
@@ -1243,6 +1242,7 @@ MERGE INTO emp_refreshment_t01 a
                                    ('AREA MANAGER',
                                     'AREA-IN-CHARGE',
                                     'MEDICAL PROMOTION EXECUTIVE',
+                                    'MEDICAL PROMOTION OFFICER',
                                     'MEDICAL PROMOTION OFFICER-1',
                                     'MEDICAL PROMOTION OFFICER-2',
                                     'REGIONAL IN CHARGE',
@@ -1253,7 +1253,7 @@ MERGE INTO emp_refreshment_t01 a
                                     'ZONAL MANAGER',
                                     'ZONAL-IN-CHARGE'))
                        OR (    b.department_name IN
-                                   ('Sales and Distribution')
+                                   ('Distribution')
                            AND (   b.desig_name IN
                                        ('SALES REP.', 'SR. SALES REP.')
                                 OR b.desig_name LIKE 'DEPOT MANAGER%')));

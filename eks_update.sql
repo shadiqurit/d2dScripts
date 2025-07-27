@@ -1,4 +1,4 @@
-/* Formatted on 1/23/2025 9:26:18 AM (QP5 v5.362) */
+/* Formatted on 5/28/2025 9:57:20 AM (QP5 v5.362) */
 DECLARE
     CURSOR dt IS
         SELECT EMPCODE,
@@ -7,7 +7,8 @@ DECLARE
                SLNO,
                REFNO,
                HEADCODE
-          FROM t_tax_up;
+          FROM t_tax_up
+         WHERE slno = 68;
 BEGIN
     FOR x IN dt
     LOOP
@@ -22,7 +23,7 @@ BEGIN
                 ON (b.EMPCODE = src.EMPCODE AND b.SLNO = src.SLNO)
         WHEN MATCHED
         THEN
-            UPDATE SET b.YEARMN = 202501,
+            UPDATE SET b.YEARMN = 202507,
                        b.AMOUNTCUR = src.CUR_TAX,
                        b.SALPER = src.CUR_TAX,
                        b.TRNDATE = SYSDATE,
@@ -34,41 +35,40 @@ BEGIN
                         EMPCODE,
                         YEARMN,
                         YEAROFSTRUC,
-                        AMOUNTPRV,
                         AMOUNTCUR,
                         SALPER,
                         TRNDATE,
                         PARTICULAR,
+                        PRTCLR_TYPE,
                         HEADCODE,
                         REFNO,
                         SL)
                 VALUES (src.SLNO,
                         src.EMPCODE,
-                        202501,
+                        202507,
                         2025,
-                        src.PREV_TAX,
                         src.CUR_TAX,
                         src.CUR_TAX,
                         SYSDATE,
-                        'Income Tax',
+                        'Emp. Kayalan Samity',
+                        2,
                         src.HEADCODE,
                         src.REFNO,
-                        55);
+                        68);
     END LOOP;
 
     COMMIT;
 END;
-/
 
 SELECT *
   FROM hr_empsalstructure st
- WHERE     slno = 55
+ WHERE     slno = 68
        AND empcode IN (SELECT EMPCODE
                          FROM t_tax_up tu);
 
 UPDATE hr_empsalstructure st
-   SET AMOUNTCUR = 0
- WHERE     slno = 55
+   SET AMOUNTPRV = AMOUNTCUR
+ WHERE     slno = 68
        AND empcode IN (SELECT EMPCODE
                          FROM t_tax_up tu);
 
@@ -87,7 +87,7 @@ DECLARE
                    (SELECT empcode
                       FROM hr_empsalstructure
                      WHERE     empcode IN (SELECT EMPCODE FROM t_tax_up)
-                           AND slno = 55);
+                           AND slno = 68);
 BEGIN
     FOR x IN dt
     LOOP
@@ -116,7 +116,7 @@ BEGIN
         --                     x.REFNO,
         --                     55);
         UPDATE hr_empsalstructure b
-           SET b.YEARMN = 202501,
+           SET b.YEARMN = 202507,
                b.AMOUNTCUR = x.CUR_TAX,
                b.SALPER = x.CUR_TAX
          WHERE b.EMPCODE = x.empcode AND b.SLNO = x.SLNO;
