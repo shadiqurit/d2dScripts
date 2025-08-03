@@ -15,7 +15,7 @@ SELECT empcode,
        WEB_PASSWORD,
        BLD_GROUP
   FROM emp
- WHERE empcode IN ('IPI-004168');
+ WHERE empcode IN ('IPI-003018');
 
   SELECT e_name                                 "Name",
          TO_CHAR (JOIN_DATE, 'DD-MON-yyyy')     "Join Date",
