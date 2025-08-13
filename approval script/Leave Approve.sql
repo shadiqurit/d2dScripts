@@ -17,7 +17,7 @@ UPDATE leave_approval
  WHERE     EMPCODE_5_hohr = 'IPI-007478'
        AND sl = 5
        AND APPROVED_DAYS <= 3
-       AND APPROVED_LEAVE_TYPE IN ('CL', 'SL', 'EL')
+       AND APPROVED_LEAVE_TYPE IN ('SL', 'CL')
        AND empcode IN (SELECT empcode FROM ipihr.emp);
 COMMIT;
 
