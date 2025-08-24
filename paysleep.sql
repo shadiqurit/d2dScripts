@@ -35,3 +35,4 @@ GROUP BY yearmn,
          slno,
          headname
   HAVING SUM (NVL (ded, 0) + NVL (salary, 0)) <> 0
+  ORDER BY 2 
