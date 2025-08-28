@@ -4,3 +4,12 @@ var tz   = ($v(tz)   == null || $v(tz)   === 0) ? 1 : $v(tz);
 var zqty = ($v(zqty) == null || $v(zqty) === 0) ? 1 : $v(zqty);
 
 Math.round(tp * exp * tz * zqty);
+
+
+
+Math.round(
+   (Number($v("tp")  || 1)) *
+   (Number($v("exp") || 1)) *
+   (Number($v("tz")  || 1)) *
+   (Number($v("zqty") === 0 ? 0 : ($v("zqty") || 1)))
+)
