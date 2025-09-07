@@ -1,0 +1,3 @@
+document forwarding system in oracle apex (Such as, Memo, Office Note, Manpower Note, Procurement Note etc.) 
+current system developed and forward system as like this table
+but we need to break serial to check document to others and take a history to other check and approval or return to forward user in any level
