@@ -1,7 +1,7 @@
 /* Formatted on 15/Aug/24 11:28:24 AM (QP5 v5.362) */
 --CREATE TABLE hr_leave_child_150824 AS SELECT * FROM hr_leave_child;
 
-
+--Join Before 1-Sep-2025
 DELETE
   FROM hr_leave_child
  WHERE     LEAVE_TYPE = 'EL'
@@ -12,4 +12,4 @@ DELETE
                   FROM emp
                  WHERE     emp_status = 'A'
                        AND JOIN_DATE <= TO_DATE ('01/Sep/2022', 'DD/MON/YY')
-                       AND CATA = 'NON OFFICER')
+                       AND CATA = 'NON OFFICER');

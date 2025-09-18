@@ -1,4 +1,24 @@
-/* Formatted on 1/5/2025 2:06:27 PM (QP5 v5.362) */
+/* Formatted on 9/17/2025 10:47:40 AM (QP5 v5.362) */
+BEGIN
+    p_leave_cal_25;
+END;
+
+--Join Before 1-Sep-2025
+DELETE FROM
+    hr_leave_child
+      WHERE     LEAVE_TYPE = 'EL'
+            AND YEAR = 2025
+            AND LEAVEADTYPE = 'Opening'
+            AND empcode IN
+                    (SELECT empcode
+                       FROM emp
+                      WHERE     emp_status = 'A'
+                            AND JOIN_DATE <=
+                                TO_DATE ('01/Sep/2022', 'DD/MON/YY')
+                            AND CATA = 'NON OFFICER');
+
+
+----
 DELETE FROM HR_LEAVE_CHILD
       WHERE     YEAR = 2025
             AND LEAVE_TYPE = 'EL'
@@ -11,17 +31,18 @@ DELETE FROM HR_LEAVE_CHILD
 
 --      IPI-003942    
 
-DELETE
-  FROM hr_leave_child
- WHERE     LEAVE_TYPE = 'EL'
-       AND YEAR = 2025
-       AND LEAVEADTYPE = 'Opening'
-       AND empcode IN
-               (SELECT empcode
-                  FROM emp
-                 WHERE     emp_status = 'A'
-                       AND JOIN_DATE < TO_DATE ('31/Aug/2022', 'DD/MON/YY')
-                       AND CATA = 'NON OFFICER');   
+DELETE FROM
+    hr_leave_child
+      WHERE     LEAVE_TYPE = 'EL'
+            AND YEAR = 2025
+            AND LEAVEADTYPE = 'Opening'
+            AND empcode IN
+                    (SELECT empcode
+                       FROM emp
+                      WHERE     emp_status = 'A'
+                            AND JOIN_DATE <
+                                TO_DATE ('31/Aug/2022', 'DD/MON/YY')
+                            AND CATA = 'NON OFFICER');
 
 CREATE TABLE hr_leave_child_102024
 AS
