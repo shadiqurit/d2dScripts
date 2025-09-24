@@ -1,4 +1,4 @@
-/* Formatted on 1/23/2025 9:26:18 AM (QP5 v5.362) */
+/* Formatted on 9/24/2025 1:00:20 PM (QP5 v5.362) */
 DECLARE
     CURSOR dt IS
         SELECT EMPCODE,
@@ -22,7 +22,7 @@ BEGIN
                 ON (b.EMPCODE = src.EMPCODE AND b.SLNO = src.SLNO)
         WHEN MATCHED
         THEN
-            UPDATE SET b.YEARMN = 202501,
+            UPDATE SET b.YEARMN = 202509,
                        b.AMOUNTCUR = src.CUR_TAX,
                        b.SALPER = src.CUR_TAX,
                        b.TRNDATE = SYSDATE,
@@ -39,18 +39,20 @@ BEGIN
                         SALPER,
                         TRNDATE,
                         PARTICULAR,
+                        PRTCLR_TYPE,
                         HEADCODE,
                         REFNO,
                         SL)
                 VALUES (src.SLNO,
                         src.EMPCODE,
-                        202501,
+                        202509,
                         2025,
                         src.PREV_TAX,
                         src.CUR_TAX,
                         src.CUR_TAX,
                         SYSDATE,
                         'Income Tax',
+                        2,
                         src.HEADCODE,
                         src.REFNO,
                         55);

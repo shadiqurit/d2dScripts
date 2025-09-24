@@ -10,10 +10,11 @@ AS
 CREATE TABLE HR_EMPSALSTRUCTURE_kpi2025
 AS
     SELECT * FROM HR_EMPSALSTRUCTURE;
-    
-    
-    
 
+CREATE TABLE kpi_reward2025
+AS
+    SELECT * FROM kpi_reward;
+    
 CREATE TABLE kpi_reward
 (
     empcode           VARCHAR2 (30),
