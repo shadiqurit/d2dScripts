@@ -15,7 +15,7 @@ SELECT empcode,
        WEB_PASSWORD,
        BLD_GROUP
   FROM emp
- WHERE empcode IN ('INM-000166',
+ WHERE empcode IN ('IPI-010100',
 'INM-000406'
 );
 

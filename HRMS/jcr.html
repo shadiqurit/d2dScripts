@@ -1,4 +1,4 @@
-Htp.p('<input id="b_print" type="button" style="float:right;Background-Color:#3498DB;Color:White;"  onClick="printdiv(''div_print'');" value=" Print"><br/> <div id="div_print" align="center" class="page" width="100%">');
+Htp.p('<input id="b_print" type="button" style="float:right;Background-Color:#3498DB;Color:White;"  onClick="printdiv('div_print');" value="Print"><br/> <div id="div_print" align="center" class="page" width="100%">');
     declare
     vId Number:=0;
     
@@ -89,7 +89,7 @@ Htp.p('<input id="b_print" type="button" style="float:right;Background-Color:#34
     
     if mod(vid,1)=0  then  
     
-    htp.p('<div style="clear:both;"></div></page><page size="A4_land"><div style="height:200mm; width=auto;"></div>');
+    htp.p('<div style="clear:both;"></div></page><page size="A4_land"><div style="height:200mm; width:auto;"></div>');
     
     end if;
     
