@@ -12,12 +12,16 @@ SELECT empcode,
        salarystep,
        salaryscal,
        emp_status,
+       CHPASSWORD,
        WEB_PASSWORD,
        BLD_GROUP
   FROM emp
- WHERE empcode IN ('IPI-010100',
-'INM-000406'
+ WHERE empcode IN ('IPI-009204'
 );
+
+UPDATE emp
+   SET CHPASSWORD = 'N', WEB_PASSWORD = '123'
+ WHERE empcode IN ('IPI-009204');
 
   SELECT e_name                                 "Name",
          TO_CHAR (JOIN_DATE, 'DD-MON-yyyy')     "Join Date",
