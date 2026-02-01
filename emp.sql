@@ -1,4 +1,4 @@
-/* Formatted on 7/16/2025 4:44:52 PM (QP5 v5.362) */
+/* Formatted on 12/15/2025 9:43:52 AM (QP5 v5.362) */
 SELECT empcode,
        e_name,
        CONFIRM_ST,
@@ -16,8 +16,7 @@ SELECT empcode,
        WEB_PASSWORD,
        BLD_GROUP
   FROM emp
- WHERE empcode IN ('IPI-009204'
-);
+ WHERE empcode IN ('IPI-008608', 'IPI-010192', 'IPI-010193');
 
 UPDATE emp
    SET CHPASSWORD = 'N', WEB_PASSWORD = '123'

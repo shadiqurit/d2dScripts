@@ -1,0 +1,13 @@
+CREATE OR REPLACE PROCEDURE attance_sync
+AS
+BEGIN
+    p_update_attendance;
+    p_cloud_sync;
+END;
+/
+
+BEGIN
+    attance_sync;
+    attance_sync_apidb;
+END;
+/

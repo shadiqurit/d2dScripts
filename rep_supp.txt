@@ -1,3 +1,19 @@
+IPI-005258
+IPI-006045
+
+AAA-0030
+
+
+CHASS = PS1JAU028SJK00977
+ENGINE = JA07AVS9J00657
+Brta_0981$#@
+
+Alim_119935
+Alim_119935
+*********1909
+IPI-000538
+
+https://cert.efset.org/en/3GFN3z
 1059114
 4897040810748412
 netsh interface show interface
@@ -16,6 +32,7 @@ hima
 
 IPI-000481
 
+IPI-008619
 
 IPI-001460
 
@@ -51,12 +68,20 @@ transfer
 sdf23423d
 sdf23423d
 
+shadiqurrahman
+Nidw_5229#
+
+
 1185964227
 sadiq123#
 administrator
 Ipi123$#@
 
 Wm@1973
+
+01889309628
+9161528851
+44343808
 
 01709645125
 
@@ -110,3 +135,18 @@ att report
 
 
 http://10.30.20.5:9002/reports/rwservlet?userid=ipihr/i@ipihr&desformat=PDF&destype=cache&report=e:\global\Stepshr\hr\report\att_emp.RDF&p_empcode=IPI-009129&p_status=&P_TDATE=31-JUL-24&P_FDATE=01-JUL-24
+
+
+Connection-specific DNS Suffix: 
+Description: Intel(R) Ethernet Connection (17) I219-V
+Physical Address: ‎F4-F1-9E-11-75-DE
+DHCP Enabled: No
+IPv4 Address: 192.168.5.237
+IPv4 Subnet Mask: 255.255.255.0
+IPv4 Default Gateway: 192.168.5.30
+IPv4 DNS Servers: 192.168.5.200, 192.168.5.211
+IPv4 WINS Server: 
+NetBIOS over Tcpip Enabled: Yes
+Link-local IPv6 Address: fe80::1182:c82b:57be:fc0%11
+IPv6 Default Gateway: 
+IPv6 DNS Server: 

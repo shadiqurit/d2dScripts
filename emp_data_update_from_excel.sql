@@ -3,10 +3,22 @@
 --first update emp gender
 UPDATE up_emp
    SET MARITAL_STATUS = 'M'
- WHERE MARITAL_STATUS = 'MARRIED';
+ WHERE MARITAL_STATUS = 'Married';
 UPDATE up_emp
    SET MARITAL_STATUS = 'U'
- WHERE MARITAL_STATUS = 'UNMARRIED';
+ WHERE MARITAL_STATUS = 'Unmarried';
+ 
+ UPDATE up_emp
+   SET MARITAL_STATUS = 'M'
+ WHERE MARITAL_STATUS = 'Married';
+ 
+ 
+  
+ UPDATE up_emp
+   SET RELIGION = 'I'
+ WHERE RELIGION = 'Islam';  
+ 
+ 
 COMMIT;
 
 --merge 
@@ -18,7 +30,7 @@ THEN
     UPDATE SET --t.e_name = s.name,
                t.birthdate = s.birthdate,
                t.bld_group = s.bld_group,
-               t.empsex = s.gender,
+             --  t.empsex = s.gender,
                t.religion = s.religion,
                t.nationality = s.nationality,
                t.maritalst = s.marital_status,
@@ -28,6 +40,7 @@ THEN
                t.height = s.height,
                t.weight = s.weight,
                t.nid = s.nid,
+               t.voter_id = s.nid,
                t.p_add1 = s.permanent_village,
                t.p_add2 = s.permanent_post,
                t.p_add3 = s.permanent_thana,
@@ -107,3 +120,6 @@ SELECT empcode       ipi,
        grnt_mobile
   FROM emp
  WHERE empcode IN (SELECT ipi FROM up_emp);               
+ 
+ 
+-- HR_EMPEXAMDET

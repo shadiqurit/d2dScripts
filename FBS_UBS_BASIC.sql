@@ -1,4 +1,8 @@
-/* Formatted on 6/15/2025 10:35:00 AM (QP5 v5.362) */
+/* Formatted on 12/8/2025 12:48:32 PM (QP5 v5.362) */
+DELETE FROM T_UBSFBS_BASIC;
+
+COMMIT;
+
 DECLARE
     CURSOR dt IS
         SELECT EMPCODE,
@@ -25,7 +29,7 @@ BEGIN
                 ON (b.EMPCODE = src.EMPCODE AND b.SLNO = src.SLNO)
         WHEN MATCHED
         THEN
-            UPDATE SET b.YEARMN = 202505,
+            UPDATE SET b.YEARMN = 202512,
                        b.AMOUNTPRV = src.AMOUNTPRV,
                        b.AMOUNTCUR = src.AMOUNTCUR,
                        b.SALPER = src.SALPER,

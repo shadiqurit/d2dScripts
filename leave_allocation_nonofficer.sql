@@ -7,7 +7,7 @@ END;
 DELETE FROM
     hr_leave_child
       WHERE     LEAVE_TYPE = 'EL'
-            AND YEAR = 2025
+            AND YEAR = 2026
             AND LEAVEADTYPE = 'Opening'
             AND empcode IN
                     (SELECT empcode
@@ -20,7 +20,7 @@ DELETE FROM
 
 ----
 DELETE FROM HR_LEAVE_CHILD
-      WHERE     YEAR = 2025
+      WHERE     YEAR = 2026
             AND LEAVE_TYPE = 'EL'
             AND LEAVEADTYPE = 'Opening'
             AND empcode IN (SELECT empcode
@@ -34,7 +34,7 @@ DELETE FROM HR_LEAVE_CHILD
 DELETE FROM
     hr_leave_child
       WHERE     LEAVE_TYPE = 'EL'
-            AND YEAR = 2025
+            AND YEAR = 2026
             AND LEAVEADTYPE = 'Opening'
             AND empcode IN
                     (SELECT empcode
@@ -127,7 +127,7 @@ SELECT empcode,
 SELECT e_name,
        DP_CODE,
        desig_code,
-       DESIG_NAME,
+       DESIG_NAME,JOIN_DATE,
        DEPARTMENT_NAME
   FROM emp
- WHERE empcode = 'IPI-003354'        --'IPI-000842' 'IPI-003354' 'IPI-002068';
+ WHERE empcode = 'INM-000390'        --'IPI-000842' 'IPI-003354' 'IPI-002068';

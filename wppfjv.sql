@@ -1,7 +1,17 @@
-/* Formatted on 2/17/2025 10:13:20 AM (QP5 v5.362) */
+/* Formatted on 12/24/2025 10:06:47 AM (QP5 v5.362) */
 SELECT *
   FROM pm_journal_voucher
  WHERE VOUCHERNO = 2941;
+
+
+
+UPDATE pm_journal_jv
+   SET DRAMOUNT = 4412
+ WHERE     MVOUCHERNO = 'BPAY2512-0001'
+       AND VOUCHERNO = '3135'
+       AND ACTCODE = '6002';
+
+COMMIT;
 
 
 
