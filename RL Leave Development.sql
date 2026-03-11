@@ -10,6 +10,14 @@ SELECT DPUSER.get_leave_balance (TRIM (UPPER ( :APP_USER)),
 --emp_service_02_rl
 ---emp_service_02_v
 
+--ipi_leave_calc_2_rl
+
+BEGIN
+  --  ipi_leave_calc_2;
+  ipi_leave_calc_2_rl;
+-- ipi_leave_calc_2_rl;
+END;
+
 UPDATE hr_leave_child
    SET DURATION = 0
  WHERE     EMPCODE IN ('IPI-004157',
@@ -31,8 +39,8 @@ UPDATE hr_leave_child
        AND LEAVE_TYPE = 'EL';
 
 BEGIN
-    ipi_leave_calc_2;
---   ipi_leave_calc_2_rl;
+  --  ipi_leave_calc_2;
+  ipi_leave_calc_2_rl;
 -- ipi_leave_calc_2_rl;
 END;
 
