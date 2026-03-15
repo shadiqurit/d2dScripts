@@ -8,7 +8,7 @@ DECLARE
                refno,
                headcode
           FROM t_sal_struc
-         WHERE slno = 25 AND status = 'P';
+         WHERE slno = 25 AND status = 'P';   --pending
 BEGIN
     FOR x IN dt
     LOOP
@@ -62,7 +62,7 @@ BEGIN
     COMMIT;
 
     UPDATE t_sal_struc
-       SET status = 'S'
+       SET status = 'S' --Submitted
      WHERE slno = 1 AND status = 'P';
 
     COMMIT;
