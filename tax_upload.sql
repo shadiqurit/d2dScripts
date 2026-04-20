@@ -22,7 +22,7 @@ BEGIN
                 ON (b.EMPCODE = src.EMPCODE AND b.SLNO = src.SLNO)
         WHEN MATCHED
         THEN
-            UPDATE SET b.YEARMN = 202510,
+            UPDATE SET b.YEARMN = 202603,
                        b.AMOUNTCUR = src.CUR_TAX,
                        b.SALPER = src.CUR_TAX,
                        b.TRNDATE = SYSDATE,
@@ -45,8 +45,8 @@ BEGIN
                         SL)
                 VALUES (src.SLNO,
                         src.EMPCODE,
-                        202510,
-                        2025,
+                        202603,
+                        2026,
                         src.PREV_TAX,
                         src.CUR_TAX,
                         src.CUR_TAX,

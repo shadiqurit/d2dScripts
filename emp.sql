@@ -1,4 +1,4 @@
-/* Formatted on 12/15/2025 9:43:52 AM (QP5 v5.362) */
+/* Formatted on 3/16/2026 11:04:26 AM (QP5 v5.362) */
 SELECT empcode,
        e_name,
        CONFIRM_ST,
@@ -21,6 +21,15 @@ SELECT empcode,
 UPDATE emp
    SET CHPASSWORD = 'N', WEB_PASSWORD = '123'
  WHERE empcode IN ('IPI-009204');
+
+UPDATE emp
+   SET WEB_PASSWORD = '123', CHPASSWORD = 'N'
+ WHERE empcode IN ('IPI-001490',
+                   'IPI-001517',
+                   'IPI-001477',
+                   'IPI-010331');
+
+COMMIT;
 
   SELECT e_name                                 "Name",
          TO_CHAR (JOIN_DATE, 'DD-MON-yyyy')     "Join Date",
