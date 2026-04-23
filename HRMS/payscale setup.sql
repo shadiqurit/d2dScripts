@@ -72,6 +72,7 @@ CREATE TABLE PAY_SCALE_MASTER
     SAF                NUMBER
 );
 
+
 /* Formatted on 4/8/2026 11:03:10 AM (QP5 v5.362) */
 CREATE TABLE ALLOWANCE_HEAD
 (

@@ -1,4 +1,12 @@
-/* Formatted on 11/20/2025 12:50:19 PM (QP5 v5.362) */
+/* Formatted on 4/22/2026 1:18:34 PM (QP5 v5.362) */
+UPDATE t_sal_struc
+   SET headcode = '001', REFNO = '001'                 ---Basic 'Basic Salary'
+ WHERE slno = 1 AND status = 'P';
+
+UPDATE t_sal_struc
+   SET headcode = '025', REFNO = '025'              --Others 'Other Allowance'
+ WHERE slno = 25 AND status = 'P';
+
 DECLARE
     CURSOR dt IS
         SELECT empcode,
@@ -8,7 +16,7 @@ DECLARE
                refno,
                headcode
           FROM t_sal_struc
-         WHERE slno = 25 AND status = 'P';   --pending
+         WHERE slno = 25 AND status = 'P';                           --pending
 BEGIN
     FOR x IN dt
     LOOP
@@ -62,8 +70,8 @@ BEGIN
     COMMIT;
 
     UPDATE t_sal_struc
-       SET status = 'S' --Submitted
-     WHERE slno = 1 AND status = 'P';
+       SET status = 'S'                                            --Submitted
+     WHERE slno = 25 AND status = 'P';
 
     COMMIT;
 END;
