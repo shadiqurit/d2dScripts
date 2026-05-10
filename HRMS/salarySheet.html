@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Statement Report</title>
+    <style>
+        /* Base Styles for Print and Web */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 10px; /* Kept small to fit all columns */
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        /* Header Section */
+        .report-header {
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .report-header img {
+            position: absolute;
+            left: 20%; /* Adjust based on your logo placement needs */
+            top: 0;
+            height: 60px;
+        }
+
+        .company-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+            color: #000;
+        }
+
+        .report-title {
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin: 0 0 3px 0;
+            color: #000;
+        }
+
+        .company-address {
+            font-size: 12px;
+            font-weight: bold;
+            margin: 0;
+            color: #000;
+        }
+
+        /* Table Styles */
+        .report-table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
+
+        .report-table th, 
+        .report-table td {
+            border: 1px solid #888;
+            padding: 4px 4px;
+            word-wrap: break-word;
+        }
+
+        /* Table Headers */
+        .report-table thead th {
+            background-color: #e5e5e5;
+            font-weight: bold;
+            text-align: center;
+            vertical-align: middle;
+            color: #000;
+            font-size: 10px;
+        }
+
+        /* Group Headers */
+        .group-header {
+            background-color: #d9d9d9;
+            font-weight: bold;
+            font-size: 11px;
+            text-align: left !important;
+        }
+        
+        .group-header span.dept-name {
+            margin-left: 50px; /* Space between Location and Dept */
+        }
+
+        /* Totals Rows */
+        .row-total td {
+            background-color: #eaeaea;
+            font-weight: bold;
+        }
+
+        .grand-total td {
+            background-color: #d0d0d0;
+            font-weight: bold;
+        }
+
+        /* Alignment Utility Classes */
+        .text-center { text-align: center !important; }
+        .text-left { text-align: left !important; }
+        .text-right { text-align: right !important; }
+
+        /* Alternating Row Colors for Data */
+        .report-table tbody tr.data-row:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .report-table tbody tr.data-row:hover {
+            background-color: #f1f5f9; /* Slight highlight on hover for web viewing */
+        }
+
+        /* Print Adjustments */
+        @media print {
+            body { padding: 0; }
+            @page { size: landscape; margin: 10mm; }
+            .report-table th { background-color: #e5e5e5 !important; -webkit-print-color-adjust: exact; }
+            .group-header { background-color: #d9d9d9 !important; -webkit-print-color-adjust: exact; }
+            .row-total td { background-color: #eaeaea !important; -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="report-header">
+        <!-- Replace src with your actual base64 or URL logo -->
+        <!-- <img src="logo.png" alt="IBN SINA Logo"> -->
+        <h1 class="company-title">The IBN SINA Pharmaceutical Industry PLC</h1>
+        <h2 class="report-title">All Employee Salary Statement for the month of April, 2026</h2>
+        <p class="company-address">Tanin Center, 3 Asad Gate, Mirpur Road, Dhaka-1207</p>
+    </div>
+
+    <table class="report-table">
+        <thead>
+            <tr>
+                <th rowspan="2">SL#</th>
+                <th rowspan="2">Emp. Code</th>
+                <th rowspan="2">Emp. ID</th>
+                <th rowspan="2" style="width: 120px;">Employee Name</th>
+                <th rowspan="2" style="width: 100px;">Designation</th>
+                <th rowspan="2">Basic Pay</th>
+                <th rowspan="2">House Rent Allow.</th>
+                <th rowspan="2">Conv. Allow.</th>
+                <th rowspan="2">Medical Allow.</th>
+                <th rowspan="2">Co's Cont. PF</th>
+                <th rowspan="2">SPA</th>
+                <th rowspan="2">Allow.</th>
+                <th rowspan="2">Arrear</th>
+                <th rowspan="2">Others</th>
+                <th rowspan="2">Gross Salary</th>
+                <th colspan="8">Deduction</th>
+                <th rowspan="2">Net Pay</th>
+            </tr>
+            <tr>
+                <th>Incom. Tax</th>
+                <th>PF Cont.</th>
+                <th>PF Loan</th>
+                <th>Adv. Salary</th>
+                <th>MC. Adv.</th>
+                <th>SAF</th>
+                <th>Others</th>
+                <th>Tot Ded</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- GROUP 1: ADMINISTRATION -->
+            <tr>
+                <td colspan="24" class="group-header">Godhulia <span class="dept-name">ADMINISTRATION</span></td>
+            </tr>
+            <tr class="data-row">
+                <td class="text-center">1</td>
+                <td class="text-center">IPI-004468</td>
+                <td class="text-center">ADF-0148</td>
+                <td class="text-left">Md. Siful Islam</td>
+                <td class="text-left">Security Guard</td>
+                <td class="text-right">12,955</td>
+                <td class="text-right">9,717</td>
+                <td class="text-right">2,000</td>
+                <td class="text-right">2,000</td>
+                <td class="text-right">1,296</td>
+                <td class="text-right">0</td>
+                <td class="text-right">2,325</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">30,293</td>
+                <td class="text-right">0</td>
+                <td class="text-right">2,591</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">100</td>
+                <td class="text-right">0</td>
+                <td class="text-right">2,691</td>
+                <td class="text-right">27,602</td>
+            </tr>
+            <tr class="data-row">
+                <td class="text-center">2</td>
+                <td class="text-center">IPI-000139</td>
+                <td class="text-center">ADF-0220</td>
+                <td class="text-left">Md. Khairul Islam</td>
+                <td class="text-left">Sr. Security Guard</td>
+                <td class="text-right">18,910</td>
+                <td class="text-right">14,184</td>
+                <td class="text-right">2,000</td>
+                <td class="text-right">2,000</td>
+                <td class="text-right">1,891</td>
+                <td class="text-right">0</td>
+                <td class="text-right">2,325</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">41,310</td>
+                <td class="text-right">0</td>
+                <td class="text-right">3,782</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">100</td>
+                <td class="text-right">500</td>
+                <td class="text-right">4,382</td>
+                <td class="text-right">36,928</td>
+            </tr>
+            <!-- Add more administration rows here -->
+            <tr class="row-total">
+                <td colspan="5" class="text-right">Total:</td>
+                <td class="text-right">204,645</td>
+                <td class="text-right">78,488</td>
+                <td class="text-right">14,000</td>
+                <td class="text-right">14,000</td>
+                <td class="text-right">10,465</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">300,000</td>
+                <td class="text-right">637,873</td>
+                <td class="text-right">15,000</td>
+                <td class="text-right">20,929</td>
+                <td class="text-right">13,000</td>
+                <td class="text-right">0</td>
+                <td class="text-right">1,800</td>
+                <td class="text-right">1,800</td>
+                <td class="text-right">1,800</td>
+                <td class="text-right">51,429</td>
+                <td class="text-right">586,444</td>
+            </tr>
+
+            <!-- GROUP 2: ENGINEERING -->
+            <tr>
+                <td colspan="24" class="group-header">Godhulia <span class="dept-name">ENGINEERING</span></td>
+            </tr>
+            <tr class="data-row">
+                <td class="text-center">9</td>
+                <td class="text-center">IPI-009909</td>
+                <td class="text-center">ENG-0143</td>
+                <td class="text-left">Md. Nayemul Islam</td>
+                <td class="text-left">Executive</td>
+                <td class="text-right">12,250</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">17,963</td>
+                <td class="text-right">30,213</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">30,213</td>
+            </tr>
+            <tr class="row-total">
+                <td colspan="5" class="text-right">Total:</td>
+                <td class="text-right">44,647</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">79,113</td>
+                <td class="text-right">123,760</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">0</td>
+                <td class="text-right">123,760</td>
+            </tr>
+
+            <!-- GRAND TOTAL (Usually placed outside the loop) -->
+            <tr class="grand-total">
+                <td colspan="5" class="text-right">Grand Total:</td>
+                <td class="text-right">420,047</td>
+                <td class="text-right">206,557</td>
+                <td class="text-right">37,300</td>
+                <td class="text-right">41,250</td>
+                <td class="text-right">23,952</td>
+                <td class="text-right">10,000</td>
+                <td class="text-right">53,350</td>
+                <td class="text-right">16,086</td>
+                <td class="text-right">414,113</td>
+                <td class="text-right">1,204,655</td>
+                <td class="text-right">19,750</td>
+                <td class="text-right">47,902</td>
+                <td class="text-right">20,500</td>
+                <td class="text-right">2,000</td>
+                <td class="text-right">0</td>
+                <td class="text-right">2,600</td>
+                <td class="text-right">18,500</td>
+                <td class="text-right">111,252</td>
+                <td class="text-right">1,093,403</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</body>
+</html>
