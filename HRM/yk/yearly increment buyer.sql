@@ -26,3 +26,7 @@ CREATE TABLE pr_increment_history (
 BEGIN
    sp_apply_yearly_increment (DATE '2026-01-26', DATE '2026-02-25');
 END;
+
+BEGIN
+   sp_apply_yearly_increment (DATE '2026-02-26', DATE '2026-03-25');
+END;
