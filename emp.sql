@@ -16,11 +16,11 @@ SELECT empcode,
        WEB_PASSWORD,
        BLD_GROUP
   FROM emp
- WHERE empcode IN ('IPI-008608', 'IPI-010192', 'IPI-010193');
+ WHERE empcode IN ('IPI-008240');
 
 UPDATE emp
    SET CHPASSWORD = 'N', WEB_PASSWORD = '123'
- WHERE empcode IN ('IPI-009204');
+ WHERE empcode IN ('IPI-008240');
 
 UPDATE emp
    SET WEB_PASSWORD = '123', CHPASSWORD = 'N'

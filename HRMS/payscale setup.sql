@@ -63,13 +63,13 @@ CREATE TABLE PAY_SCALE_MASTER
     CREATED_DATE       DATE DEFAULT SYSDATE,
     UPDATED_BY         NUMBER,         --REF Employee ID as employees table id
     UPDATED_DATE       DATE,
-    HR                 NUMBER,
-    CPF                NUMBER,
-    PFCONT             NUMBER,
-    CONV               NUMBER,
-    MEDICAL            NUMBER,
-    ALLOWANCE          NUMBER,
-    SAF                NUMBER
+    HR                 NUMBER, --- head_code 005 slno/head_id 5 earning
+    CPF                NUMBER, --- head_code 013 slno/head_id 3 earning
+    PFCONT             NUMBER, --- head_code 005 slno/head_id 5 deduction
+    CONV               NUMBER, --- head_code 007 slno/head_id 7 earning
+    MEDICAL            NUMBER, --- head_code 010 slno/head_id 10 earn
+    ALLOWANCE          NUMBER,  --- head_code 037 slno/head_id 37 earn
+    SAF                NUMBER --- head_code 075 slno/head_id 75 deduction
 );
 
 

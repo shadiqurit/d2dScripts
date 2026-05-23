@@ -1,3 +1,8 @@
+orapki wallet add -wallet E:\app\oracle\wallets\resend_wallet -trusted_cert -cert "E:\app\oracle\certs\GTS Root R4.crt" -pwd MyWalletPass123
+
+
+orapki wallet add -wallet E:\app\oracle\wallets\resend_wallet -trusted_cert -cert "E:\app\oracle\certs\WE1.crt" -pwd MyWalletPass123
+
 IPI-005258
 IPI-006045
 
