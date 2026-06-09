@@ -1,4 +1,4 @@
-/* Formatted on 3/16/2026 11:04:26 AM (QP5 v5.362) */
+/* Formatted on 6/9/2026 8:34:26 AM (QP5 v5.362) */
 SELECT empcode,
        e_name,
        CONFIRM_ST,
@@ -17,6 +17,12 @@ SELECT empcode,
        BLD_GROUP
   FROM emp
  WHERE empcode IN ('IPI-008240');
+
+
+UPDATE emp
+   SET department_name = 'Information Technology'
+ WHERE     empcode = 'IPI-009129'
+       AND department_name = 'Information and Communication Technology';
 
 UPDATE emp
    SET CHPASSWORD = 'N', WEB_PASSWORD = '123'
@@ -97,3 +103,26 @@ SELECT EMPCODE,
 
 --IPI-001630
 --779120
+
+
+----API NEW employee update -----
+
+SELECT ID,
+       F_NAME,
+       L_NAME,
+       COM_ID,
+       EMPID,
+       EMPNO,
+       EMP_ID,
+       MC_ID
+  FROM employees
+ WHERE EMP_ID IN ('IPI-008619',
+                  'IPI-010714',
+                  'IPI-010715',
+                  'IPI-010716');
+
+UPDATE employees
+   SET MC_ID = 240010716, ID = 240010716, EMPID = 240010716
+ WHERE EMP_ID = 'IPI-010716';
+
+COMMIT;
