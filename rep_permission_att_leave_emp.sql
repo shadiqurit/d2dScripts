@@ -3,102 +3,102 @@ Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (219, 'Leave Status', 'ipi_leave_report_1', 'INM-000354', 1, 
+   (219, 'Leave Status', 'ipi_leave_report_1', 'IPI-010825', 1, 
     104, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('31/Jul/21 3:07:13 PM', 'DD/MON/YY HH:MI:SS AM'));
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (220, 'Leave Details', 'ipi_leave_report_2', 'INM-000354', 1, 
+   (220, 'Leave Details', 'ipi_leave_report_2', 'IPI-010825', 1, 
     104, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('31/Jul/21 3:07:13 PM', 'DD/MON/YY HH:MI:SS AM'));
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (221, 'Encashment Status', 'ipi_leave_report_3', 'INM-000354', 1, 
+   (221, 'Encashment Status', 'ipi_leave_report_3', 'IPI-010825', 1, 
     104, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('31/Jul/21 3:07:13 PM', 'DD/MON/YY HH:MI:SS AM'));
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (242, 'Monthwise Leave Report', 'leave_monthly', 'INM-000354', 1, 
+   (242, 'Monthwise Leave Report', 'leave_monthly', 'IPI-010825', 1, 
     104, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('31/Jul/21 3:07:13 PM', 'DD/MON/YY HH:MI:SS AM'));
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (33, 'Employee Detail', 'empdetail', 'INM-000354', 1, 
+   (33, 'Employee Detail', 'empdetail', 'IPI-010825', 1, 
     102, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('31/Jul/21 2:59:41 PM', 'DD/MON/YY HH:MI:SS AM'));
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (77, 'Attendence> Job Card Report', 'att_emp', 'INM-000354', 1, 
+   (77, 'Attendence> Job Card Report', 'att_emp', 'IPI-010825', 1, 
     105, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('31/Jul/21 2:58:13 PM', 'DD/MON/YY HH:MI:SS AM'));
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (277, 'Late Attendance Detail', 'att_emp_LATE', 'INM-000354', 1, 
+   (277, 'Late Attendance Detail', 'att_emp_LATE', 'IPI-010825', 1, 
     104, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('31/Jul/21 3:07:13 PM', 'DD/MON/YY HH:MI:SS AM'));
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (102, 'Employee', 'Employee', 'INM-000354', 1, 
+   (102, 'Employee', 'Employee', 'IPI-010825', 1, 
     NULL, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), NULL, NULL);
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (104, 'Leave', 'Leave', 'INM-000354', 1, 
+   (104, 'Leave', 'Leave', 'IPI-010825', 1, 
     NULL, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), NULL, NULL);
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (79, 'Attendence Monthly Summary', 'att_monthly_summary', 'INM-000354', 1, 
+   (79, 'Attendence Monthly Summary', 'att_monthly_summary', 'IPI-010825', 1, 
     105, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('31/Jul/21 2:58:13 PM', 'DD/MON/YY HH:MI:SS AM'));
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (105, 'Attendance', 'ATTENDENCE', 'INM-000354', 1, 
+   (105, 'Attendance', 'ATTENDENCE', 'IPI-010825', 1, 
     NULL, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), NULL, NULL);
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (78, 'Attendence Daily  Status', 'att_daily_status', 'INM-000354', 1, 
+   (78, 'Attendence Daily  Status', 'att_daily_status', 'IPI-010825', 1, 
     105, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('31/Jul/21 2:58:13 PM', 'DD/MON/YY HH:MI:SS AM'));
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (276, 'Leave For Late', 'Leave_for_late', 'INM-000354', 1, 
+   (276, 'Leave For Late', 'Leave_for_late', 'IPI-010825', 1, 
     104, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('31/Jul/21 3:07:13 PM', 'DD/MON/YY HH:MI:SS AM'));
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (306, 'Leave Avail Info', 'Leave_avail_info', 'INM-000354', 1, 
+   (306, 'Leave Avail Info', 'Leave_avail_info', 'IPI-010825', 1, 
     104, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('31/Jul/21 3:07:13 PM', 'DD/MON/YY HH:MI:SS AM'));
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (263, 'leave EL (GL)', 'ipi_leave_el_gl', 'INM-000354', 1, 
+   (263, 'leave EL (GL)', 'ipi_leave_el_gl', 'IPI-010825', 1, 
     104, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('31/Jul/21 3:07:13 PM', 'DD/MON/YY HH:MI:SS AM'));
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (302, 'Sick Leave Status', 'slleave', 'INM-000354', 1, 
+   (302, 'Sick Leave Status', 'slleave', 'IPI-010825', 1, 
     104, 'IPI-009129', TO_DATE('31/Jul/21 2:55:38 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('31/Jul/21 3:07:13 PM', 'DD/MON/YY HH:MI:SS AM'));
 Insert into SM_OBJECT_LIST_2
    (OBJ_ID, OBJ_TITLE, OBJ_NAME, USERID, IS_DISPLAY, 
     P_OBJ_ID, ADDEDBY, DATEADDED, UPDATEBY, UPDATEDATE)
  Values
-   (328, 'Non Officer El GL', 'pi_el_gl_nonofficer_rdf', 'INM-000354', 1, 
+   (328, 'Non Officer El GL', 'pi_el_gl_nonofficer_rdf', 'IPI-010825', 1, 
     104, 'IPI-009129', TO_DATE('13/Feb/23 2:37:45 PM', 'DD/MON/YY HH:MI:SS AM'), 'IPI-009129', TO_DATE('13/Feb/23 3:08:55 PM', 'DD/MON/YY HH:MI:SS AM'));
 COMMIT;

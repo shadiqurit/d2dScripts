@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Statement - IBN SINA</title>
+    <!-- Reference for layout design: image_645be0.jpg -->
+    <style>
+        /* Set page size to Legal Landscape for printing */
+        @page {
+            size: legal landscape;
+            margin: 10mm;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 9px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            width: 50px;
+            margin-right: 15px;
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 22px;
+            font-style: italic;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            display: flex;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 5px;
+            gap: 150px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
+
+        th, td {
+            border: 1px solid #666;
+            padding: 3px 4px;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+            font-weight: bold;
+            font-size: 8.5px;
+        }
+
+        .text-left { text-align: left; }
+        .text-center { text-align: center; }
+        
+        .section-title {
+            text-align: left;
+            font-weight: bold;
+            font-size: 11px;
+            border: none;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+
+        .total-row td {
+            font-weight: bold;
+            background-color: #f2f2f2;
+        }
+
+        .footer-words {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .sig-line {
+            border-top: 1px solid #000;
+            padding-top: 5px;
+            width: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <!-- Assuming the logo would go here, referencing image_645be0.jpg conceptually -->
+        <div class="logo">
+            <img src="ipi.png" alt="IBN SINA Logo" style="width: 100%; height: auto;">
+        </div>
+        <div class="header-text">
+            <h1>The IBN SINA Pharmaceutical Industry PLC</h1>
+            <div class="subtitle">
+                <span>All Employee Salary Statement for the month of June, 2026</span>
+                <span>Business Unit: Pharma</span>
+            </div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>SL#</th>
+                <th class="text-left">Department Name</th>
+                <th>No. of Emp</th>
+                <th>Basic</th>
+                <th>HRA</th>
+                <th>CA</th>
+                <th>MA</th>
+                <th>CPF</th>
+                <th>SPA</th>
+                <th>Allow.</th>
+                <th>Arrear</th>
+                <th>Others</th>
+                <th>Gross</th>
+                <th>IT</th>
+                <th>PF Cont.</th>
+                <th>PFL</th>
+                <th>AAS</th>
+                <th>MC ADV</th>
+                <th>SAF</th>
+                <th>Others</th>
+                <th>Tot Ded</th>
+                <th>Net Pay</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- FACTORY SECTION -->
+            <tr>
+                <td colspan="22" class="section-title">FACTORY</td>
+            </tr>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="text-left">ADMINISTRATION</td>
+                <td class="text-center">139</td>
+                <td>1897010</td>
+                <td>1400269</td>
+                <td>280400</td>
+                <td>299000</td>
+                <td>178312</td>
+                <td>17002</td>
+                <td>341225</td>
+                <td>9403</td>
+                <td>200515</td>
+                <td>4,621,136</td>
+                <td>106600</td>
+                <td>352503</td>
+                <td>402000</td>
+                <td>12274</td>
+                <td>0</td>
+                <td>16800</td>
+                <td>115205</td>
+                <td>1005182</td>
+                <td>3,663,954</td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td class="text-left">CALIBRATION AND QUALIFICATION</td>
+                <td class="text-center">4</td>
+                <td>77650</td>
+                <td>58238</td>
+                <td>12300</td>
+                <td>13950</td>
+                <td>7765</td>
+                <td>5000</td>
+                <td>20325</td>
+                <td>0</td>
+                <td>19800</td>
+                <td>215,028</td>
+                <td>900</td>
+                <td>15530</td>
+                <td>5000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1500</td>
+                <td>350</td>
+                <td>23280</td>
+                <td>191,748</td>
+            </tr>
+            <tr>
+                <td class="text-center">3</td>
+                <td class="text-left">ENGINEERING</td>
+                <td class="text-center">89</td>
+                <td>1395840</td>
+                <td>973684</td>
+                <td>207700</td>
+                <td>203450</td>
+                <td>132174</td>
+                <td>36425</td>
+                <td>274200</td>
+                <td>59502</td>
+                <td>328328</td>
+                <td>3,611,303</td>
+                <td>72575</td>
+                <td>264308</td>
+                <td>245500</td>
+                <td>2000</td>
+                <td>0</td>
+                <td>16200</td>
+                <td>143944</td>
+                <td>744527</td>
+                <td>2,866,776</td>
+            </tr>
+            <tr>
+                <td class="text-center">4</td>
+                <td class="text-left">INTERNATIONAL PROCUREMENT</td>
+                <td class="text-center">10</td>
+                <td>274930</td>
+                <td>206202</td>
+                <td>30900</td>
+                <td>37950</td>
+                <td>27493</td>
+                <td>17000</td>
+                <td>58375</td>
+                <td>3899</td>
+                <td>0</td>
+                <td>656,749</td>
+                <td>6700</td>
+                <td>54986</td>
+                <td>47500</td>
+                <td>1000</td>
+                <td>0</td>
+                <td>4300</td>
+                <td>12878</td>
+                <td>126508</td>
+                <td>513,241</td>
+            </tr>
+            <tr>
+                <td class="text-center">5</td>
+                <td class="text-left">LOCAL PROCUREMENT</td>
+                <td class="text-center">11</td>
+                <td>248785</td>
+                <td>138288</td>
+                <td>24300</td>
+                <td>29000</td>
+                <td>18437</td>
+                <td>4600</td>
+                <td>46350</td>
+                <td>0</td>
+                <td>81873</td>
+                <td>593,613</td>
+                <td>7500</td>
+                <td>38871</td>
+                <td>25500</td>
+                <td>0</td>
+                <td>1500</td>
+                <td>3500</td>
+                <td>18556</td>
+                <td>95404</td>
+                <td>498,209</td>
+            </tr>
+            <tr>
+                <td class="text-center">6</td>
+                <td class="text-left">MARKETING</td>
+                <td class="text-center">40</td>
+                <td>1176970</td>
+                <td>882749</td>
+                <td>122000</td>
+                <td>161200</td>
+                <td>104661</td>
+                <td>56000</td>
+                <td>227550</td>
+                <td>7719</td>
+                <td>285014</td>
+                <td>3,023,863</td>
+                <td>62000</td>
+                <td>209322</td>
+                <td>173000</td>
+                <td>18600</td>
+                <td>1500</td>
+                <td>14300</td>
+                <td>79823</td>
+                <td>559190</td>
+                <td>2,464,673</td>
+            </tr>
+            <tr>
+                <td class="text-center">7</td>
+                <td class="text-left">MICROBIOLOGY</td>
+                <td class="text-center">26</td>
+                <td>450485</td>
+                <td>290997</td>
+                <td>59700</td>
+                <td>67450</td>
+                <td>37580</td>
+                <td>23145</td>
+                <td>99375</td>
+                <td>6387</td>
+                <td>130375</td>
+                <td>1,165,494</td>
+                <td>8700</td>
+                <td>75147</td>
+                <td>34000</td>
+                <td>0</td>
+                <td>0</td>
+                <td>6000</td>
+                <td>9600</td>
+                <td>133447</td>
+                <td>1,032,047</td>
+            </tr>
+            <tr>
+                <td class="text-center">8</td>
+                <td class="text-left">MMIC</td>
+                <td class="text-center">63</td>
+                <td>1028140</td>
+                <td>763949</td>
+                <td>140300</td>
+                <td>150550</td>
+                <td>101873</td>
+                <td>22575</td>
+                <td>202050</td>
+                <td>10238</td>
+                <td>34299</td>
+                <td>2,453,974</td>
+                <td>12600</td>
+                <td>203713</td>
+                <td>210500</td>
+                <td>2000</td>
+                <td>0</td>
+                <td>11100</td>
+                <td>75058</td>
+                <td>514971</td>
+                <td>1,939,003</td>
+            </tr>
+            <tr>
+                <td class="text-center">9</td>
+                <td class="text-left">PRODUCT DEVELOPMENT</td>
+                <td class="text-center">30</td>
+                <td>597214</td>
+                <td>439346</td>
+                <td>79600</td>
+                <td>95434</td>
+                <td>58579</td>
+                <td>54925</td>
+                <td>141291</td>
+                <td>4818</td>
+                <td>83074</td>
+                <td>1,554,347</td>
+                <td>14350</td>
+                <td>117156</td>
+                <td>52000</td>
+                <td>5000</td>
+                <td>0</td>
+                <td>8926</td>
+                <td>21633</td>
+                <td>232225</td>
+                <td>1,322,122</td>
+            </tr>
+            <tr>
+                <td class="text-center">10</td>
+                <td class="text-left">PRODUCTION</td>
+                <td class="text-center">713</td>
+                <td>7630385</td>
+                <td>5722944</td>
+                <td>1472000</td>
+                <td>1502050</td>
+                <td>757879</td>
+                <td>62410</td>
+                <td>1830750</td>
+                <td>191004</td>
+                <td>161524</td>
+                <td>19,330,926</td>
+                <td>42550</td>
+                <td>1515289</td>
+                <td>1246500</td>
+                <td>11000</td>
+                <td>0</td>
+                <td>87900</td>
+                <td>267490</td>
+                <td>3170729</td>
+                <td>16,160,197</td>
+            </tr>
+            <tr>
+                <td class="text-center">11</td>
+                <td class="text-left">PRODUCTION PLANNING AND SC</td>
+                <td class="text-center">2</td>
+                <td>52460</td>
+                <td>39346</td>
+                <td>5600</td>
+                <td>8000</td>
+                <td>5246</td>
+                <td>0</td>
+                <td>13000</td>
+                <td>0</td>
+                <td>10000</td>
+                <td>133,652</td>
+                <td>700</td>
+                <td>10492</td>
+                <td>8500</td>
+                <td>0</td>
+                <td>0</td>
+                <td>800</td>
+                <td>5000</td>
+                <td>25492</td>
+                <td>108,160</td>
+            </tr>
+            <tr>
+                <td class="text-center">12</td>
+                <td class="text-left">PROJECT AND DEVELOPMENT</td>
+                <td class="text-center">6</td>
+                <td>147110</td>
+                <td>21255</td>
+                <td>4800</td>
+                <td>5550</td>
+                <td>1690</td>
+                <td>0</td>
+                <td>9800</td>
+                <td>0</td>
+                <td>335052</td>
+                <td>525,257</td>
+                <td>15000</td>
+                <td>3380</td>
+                <td>2000</td>
+                <td>2000</td>
+                <td>0</td>
+                <td>400</td>
+                <td>107000</td>
+                <td>129780</td>
+                <td>395,477</td>
+            </tr>
+            <tr>
+                <td class="text-center">13</td>
+                <td class="text-left">QUALITY ASSURANCE</td>
+                <td class="text-center">70</td>
+                <td>1040835</td>
+                <td>780644</td>
+                <td>164500</td>
+                <td>182700</td>
+                <td>102879</td>
+                <td>21000</td>
+                <td>262425</td>
+                <td>26845</td>
+                <td>100948</td>
+                <td>2,682,776</td>
+                <td>14500</td>
+                <td>205717</td>
+                <td>149000</td>
+                <td>2000</td>
+                <td>0</td>
+                <td>16800</td>
+                <td>37350</td>
+                <td>425367</td>
+                <td>2,257,409</td>
+            </tr>
+            <tr>
+                <td class="text-center">14</td>
+                <td class="text-left">QUALITY CONTROL</td>
+                <td class="text-center">71</td>
+                <td>1322905</td>
+                <td>992203</td>
+                <td>180800</td>
+                <td>217450</td>
+                <td>131078</td>
+                <td>33000</td>
+                <td>335150</td>
+                <td>23371</td>
+                <td>172600</td>
+                <td>3,408,555</td>
+                <td>22350</td>
+                <td>262131</td>
+                <td>161000</td>
+                <td>3000</td>
+                <td>0</td>
+                <td>21300</td>
+                <td>55650</td>
+                <td>525431</td>
+                <td>2,883,124</td>
+            </tr>
+            <tr class="total-row">
+                <td></td>
+                <td class="text-left">Total:</td>
+                <td class="text-center">1274</td>
+                <td>17340699</td>
+                <td>12710095</td>
+                <td>2784900</td>
+                <td>2973734</td>
+                <td>1663644</td>
+                <td>353082</td>
+                <td>3863866</td>
+                <td>343186</td>
+                <td>1943402</td>
+                <td>43,976,674</td>
+                <td>387025</td>
+                <td>3326545</td>
+                <td>2762000</td>
+                <td>58874</td>
+                <td>3000</td>
+                <td>209626</td>
+                <td>949537</td>
+                <td>7713533</td>
+                <td>36,196,141</td>
+            </tr>
+            
+            <!-- HEAD OFFICE SECTION -->
+            <tr>
+                <td colspan="22" class="section-title">HEAD OFFICE</td>
+            </tr>
+            <tr>
+                <td class="text-center">15</td>
+                <td class="text-left">ADMINISTRATION</td>
+                <td class="text-center">51</td>
+                <td>1723455</td>
+                <td>1089880</td>
+                <td>144700</td>
+                <td>179650</td>
+                <td>91965</td>
+                <td>17500</td>
+                <td>143225</td>
+                <td>17948</td>
+                <td>390906</td>
+                <td>3,799,229</td>
+                <td>332500</td>
+                <td>183899</td>
+                <td>238000</td>
+                <td>142500</td>
+                <td>6500</td>
+                <td>8400</td>
+                <td>264886</td>
+                <td>1180226</td>
+                <td>2,589,003</td>
+            </tr>
+            <tr>
+                <td class="text-center">16</td>
+                <td class="text-left">CORPORATE AFFAIRS</td>
+                <td class="text-center">2</td>
+                <td>37400</td>
+                <td>28050</td>
+                <td>5000</td>
+                <td>6500</td>
+                <td>3740</td>
+                <td>0</td>
+                <td>11600</td>
+                <td>0</td>
+                <td>0</td>
+                <td>92,290</td>
+                <td>0</td>
+                <td>7480</td>
+                <td>3500</td>
+                <td>500</td>
+                <td>0</td>
+                <td>800</td>
+                <td>6740</td>
+                <td>19020</td>
+                <td>73,270</td>
+            </tr>
+            <tr>
+                <td class="text-center">17</td>
+                <td class="text-left">DISTRIBUTION</td>
+                <td class="text-center">998</td>
+                <td>14439740</td>
+                <td>10578180</td>
+                <td>1941200</td>
+                <td>1976150</td>
+                <td>1385725</td>
+                <td>19427</td>
+                <td>2418750</td>
+                <td>442339</td>
+                <td>676508</td>
+                <td>33,878,019</td>
+                <td>62950</td>
+                <td>2770490</td>
+                <td>2940000</td>
+                <td>14000</td>
+                <td>6000</td>
+                <td>120700</td>
+                <td>493436</td>
+                <td>6489332</td>
+                <td>27,302,012</td>
+            </tr>
+            <tr>
+                <td class="text-center">18</td>
+                <td class="text-left">FINANCE AND ACCOUNTS</td>
+                <td class="text-center">35</td>
+                <td>994480</td>
+                <td>696028</td>
+                <td>97300</td>
+                <td>141450</td>
+                <td>99450</td>
+                <td>55512</td>
+                <td>180975</td>
+                <td>1560</td>
+                <td>430014</td>
+                <td>2,696,769</td>
+                <td>40170</td>
+                <td>198896</td>
+                <td>538500</td>
+                <td>39352</td>
+                <td>3000</td>
+                <td>13900</td>
+                <td>237086</td>
+                <td>1080986</td>
+                <td>1,553,966</td>
+            </tr>
+            <tr>
+                <td class="text-center">19</td>
+                <td class="text-left">HUMAN RESOURCE</td>
+                <td class="text-center">18</td>
+                <td>435160</td>
+                <td>326378</td>
+                <td>50700</td>
+                <td>59900</td>
+                <td>41066</td>
+                <td>2000</td>
+                <td>93850</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1,009,054</td>
+                <td>8900</td>
+                <td>82132</td>
+                <td>73000</td>
+                <td>20000</td>
+                <td>0</td>
+                <td>6200</td>
+                <td>46901</td>
+                <td>242262</td>
+                <td>766,792</td>
+            </tr>
+            <tr>
+                <td class="text-center">20</td>
+                <td class="text-left">INFORMATION AND COMMUNICATION</td>
+                <td class="text-center">22</td>
+                <td>579180</td>
+                <td>434406</td>
+                <td>64900</td>
+                <td>81150</td>
+                <td>56820</td>
+                <td>92149</td>
+                <td>126900</td>
+                <td>19624</td>
+                <td>44029</td>
+                <td>1,499,167</td>
+                <td>14950</td>
+                <td>113838</td>
+                <td>67500</td>
+                <td>49000</td>
+                <td>1500</td>
+                <td>8000</td>
+                <td>67387</td>
+                <td>325327</td>
+                <td>1,173,840</td>
+            </tr>
+            <tr>
+                <td class="text-center">21</td>
+                <td class="text-left">INTERNAL AUDIT AND COMPLIANCE</td>
+                <td class="text-center">10</td>
+                <td>301020</td>
+                <td>225769</td>
+                <td>32400</td>
+                <td>41000</td>
+                <td>30102</td>
+                <td>54200</td>
+                <td>64600</td>
+                <td>4012</td>
+                <td>34990</td>
+                <td>788,093</td>
+                <td>8600</td>
+                <td>60204</td>
+                <td>64000</td>
+                <td>33000</td>
+                <td>0</td>
+                <td>4800</td>
+                <td>11000</td>
+                <td>181604</td>
+                <td>606,489</td>
+            </tr>
+            <tr>
+                <td class="text-center">22</td>
+                <td class="text-left">INTERNATIONAL BUSINESS</td>
+                <td class="text-center">7</td>
+                <td>227640</td>
+                <td>170733</td>
+                <td>23500</td>
+                <td>27950</td>
+                <td>22765</td>
+                <td>21000</td>
+                <td>41375</td>
+                <td>2669</td>
+                <td>0</td>
+                <td>537,632</td>
+                <td>10800</td>
+                <td>45528</td>
+                <td>31000</td>
+                <td>1000</td>
+                <td>0</td>
+                <td>3100</td>
+                <td>11500</td>
+                <td>102928</td>
+                <td>384,704</td>
+            </tr>
+            <tr>
+                <td class="text-center">23</td>
+                <td class="text-left">LEGAL AFFAIRS AND ESTATE</td>
+                <td class="text-center">4</td>
+                <td>146870</td>
+                <td>110156</td>
+                <td>13800</td>
+                <td>17000</td>
+                <td>14687</td>
+                <td>18000</td>
+                <td>28375</td>
+                <td>6093</td>
+                <td>0</td>
+                <td>354,981</td>
+                <td>20800</td>
+                <td>29374</td>
+                <td>5500</td>
+                <td>36000</td>
+                <td>0</td>
+                <td>1700</td>
+                <td>8500</td>
+                <td>101874</td>
+                <td>216,202</td>
+            </tr>
+            <tr>
+                <td class="text-center">24</td>
+                <td class="text-left">MARKET SURVEY</td>
+                <td class="text-center">28</td>
+                <td>719030</td>
+                <td>539291</td>
+                <td>68700</td>
+                <td>77600</td>
+                <td>71903</td>
+                <td>0</td>
+                <td>131150</td>
+                <td>14808</td>
+                <td>0</td>
+                <td>1,622,482</td>
+                <td>8700</td>
+                <td>143806</td>
+                <td>89500</td>
+                <td>0</td>
+                <td>0</td>
+                <td>7800</td>
+                <td>40181</td>
+                <td>294130</td>
+                <td>1,328,352</td>
+            </tr>
+            <tr>
+                <td class="text-center">25</td>
+                <td class="text-left">SALES</td>
+                <td class="text-center">2861</td>
+                <td>53792045</td>
+                <td>37081609</td>
+                <td>5893500</td>
+                <td>6304150</td>
+                <td>4941743</td>
+                <td>178500</td>
+                <td>10674625</td>
+                <td>949552</td>
+                <td>12331567</td>
+                <td>132,147,291</td>
+                <td>656400</td>
+                <td>9883478</td>
+                <td>7231000</td>
+                <td>278000</td>
+                <td>1542349</td>
+                <td>614400</td>
+                <td>1400870</td>
+                <td>23002278</td>
+                <td>108,993,891</td>
+            </tr>
+            <tr>
+                <td class="text-center">26</td>
+                <td class="text-left">SHARE</td>
+                <td class="text-center">4</td>
+                <td>116930</td>
+                <td>46149</td>
+                <td>7300</td>
+                <td>9250</td>
+                <td>4449</td>
+                <td>2987</td>
+                <td>14625</td>
+                <td>1605</td>
+                <td>77960</td>
+                <td>281,255</td>
+                <td>5500</td>
+                <td>8896</td>
+                <td>9500</td>
+                <td>0</td>
+                <td>0</td>
+                <td>500</td>
+                <td>88110</td>
+                <td>112506</td>
+                <td>168,749</td>
+            </tr>
+            <tr>
+                <td class="text-center">27</td>
+                <td class="text-left">TRAINING AND SKILL DEVELOPM...</td>
+                <td class="text-center">2</td>
+                <td>102790</td>
+                <td>77094</td>
+                <td>8300</td>
+                <td>11250</td>
+                <td>10279</td>
+                <td>15000</td>
+                <td>16250</td>
+                <td>0</td>
+                <td>0</td>
+                <td>240,963</td>
+                <td>5500</td>
+                <td>20558</td>
+                <td>25000</td>
+                <td>2000</td>
+                <td>0</td>
+                <td>1200</td>
+                <td>1500</td>
+                <td>55758</td>
+                <td>160,032</td>
+            </tr>
+            <tr class="total-row">
+                <td></td>
+                <td class="text-left">Total:</td>
+                <td class="text-center">4042</td>
+                <td>73615750</td>
+                <td>51405722</td>
+                <td>8351300</td>
+                <td>8933000</td>
+                <td>6774694</td>
+                <td>476275</td>
+                <td>13946300</td>
+                <td>1460210</td>
+                <td>13985974</td>
+                <td>178,949,225</td>
+                <td>1175770</td>
+                <td>13548377</td>
+                <td>11316000</td>
+                <td>615352</td>
+                <td>1559349</td>
+                <td>791500</td>
+                <td>2678097</td>
+                <td>33188231</td>
+                <td>145,317,302</td>
+            </tr>
+            <!-- GRAND TOTAL ROW -->
+            <tr class="total-row" style="border-top: 2px solid #666; border-bottom: 2px solid #666;">
+                <td></td>
+                <td></td>
+                <td class="text-center">5316</td>
+                <td>90956449</td>
+                <td>64115817</td>
+                <td>11136266</td>
+                <td>11906734</td>
+                <td>8438338</td>
+                <td>829357</td>
+                <td>17810166</td>
+                <td>1803396</td>
+                <td>15929376</td>
+                <td>222,925,899</td>
+                <td>1562795</td>
+                <td>16874922</td>
+                <td>14078000</td>
+                <td>674226</td>
+                <td>1562349</td>
+                <td>1001126</td>
+                <td>3627634</td>
+                <td>40901764</td>
+                <td>181,513,443</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="footer-words">
+        Taka in word : Twenty Two Crore Twenty-Nine Lakh Twenty-Five Thousand Eight Hundred Ninety Nine
+    </div>
+
+    <div class="signatures">
+        <div class="sig-line">Worked-out By</div>
+        <div class="sig-line" style="margin-left: 200px;">Checked By</div>
+        <div class="sig-line" style="margin-left: auto; margin-right: 200px;">Checked By</div>
+        <div class="sig-line">Approved By</div>
+    </div>
+
+</body>
+</html>
