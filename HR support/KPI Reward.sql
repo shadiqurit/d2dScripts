@@ -1,19 +1,20 @@
 /* Formatted on 8/24/2025 1:57:22 PM (QP5 v5.362) */
-CREATE TABLE HR_EMPCHANGE_kpi2025
+CREATE TABLE HR_EMPCHANGE_kpi2026
 AS
     SELECT * FROM HR_EMPCHANGE;
 
-CREATE TABLE HR_EMPINCR_DET_kpi2025
+CREATE TABLE HR_EMPINCR_DET_kpi2026
 AS
     SELECT * FROM HR_EMPINCR_DET;
 
-CREATE TABLE HR_EMPSALSTRUCTURE_kpi2025
+  
+CREATE TABLE HR_EMPSALSTRUCTURE_kpi2026
 AS
     SELECT * FROM HR_EMPSALSTRUCTURE;
 
-CREATE TABLE kpi_reward2025
-AS
-    SELECT * FROM kpi_reward;
+ 
+grant select on kpi_reward to dpuser;
+    
     
 CREATE TABLE kpi_reward
 (
@@ -24,7 +25,7 @@ CREATE TABLE kpi_reward
     no_of_incr        NUMBER,
     allowance         NUMBER,
     total             NUMBER,
-    effective_date    DATE,
+    effective_date     VARCHAR2 (30),
     refno             VARCHAR2 (30)
 );
 
